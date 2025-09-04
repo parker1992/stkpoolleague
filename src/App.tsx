@@ -160,8 +160,8 @@ function App() {
                 <div className="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-6">
                   <Calendar className="h-8 w-8 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-2">4 Teams</h3>
-                <h3 className="text-2xl font-bold text-white mb-2">4 Venues</h3>
+                <h3 className="text-2xl font-bold text-white mb-2">5 Teams</h3>
+                <h3 className="text-2xl font-bold text-white mb-2">5 Venues</h3>
                 <p className="text-gray-300">Weeknight Competition</p>
               </CardContent>
             </Card>

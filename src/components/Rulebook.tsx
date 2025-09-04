@@ -200,6 +200,36 @@ export function Rulebook({ onBack, onNavigateToTeams, onNavigateToLocations }: R
           </CardContent>
         </Card>
 
+        {/* Nightly Showdown Format */}
+        <Card className="bg-gray-800 border-gray-700 mb-8">
+          <CardHeader>
+            <CardTitle className="text-2xl text-red-500 flex items-center">
+              Nightly Showdown Format
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="text-gray-300 space-y-6">
+            <div>
+              <p>Where bullets fly and legends sharpen&mdash;each night now throws down in two high-stakes rounds before ignighting the final shootout.</p>
+            </div>
+            <div>
+              <h4 className="font-bold text-white mb-3">How It Breaks Down</h4>
+              <p>First and second place from each round battle it out in the shootout. Second-place players get placed into the losers bracket, so first-placers start with an extra strike buffer. Because you earned it.</p>
+            </div>
+            <div>
+              <h4 className="font-bold text-white mb-3">Split the Spoils</h4>
+              <p>When the final ball drops:</p>
+              <ul className="space-y-2 font-bold">
+                <li>• Winner cashes in 40% of the pot.</li>
+                <li>• Another 40% fuels the Progressive Invitational Pot, building each night until it breaks at the finale.</li>
+                <li>• 20% goes straight to the game runner.</li>
+              </ul>
+            </div>
+            <div>
+              <p>With a $25 buy-in, the Invitational pot can balloon&mdash;up to <span className="font-bold">$1,000 added in a single night</span>. That's what happens when everyone plays more, and every shot counts.</p>
+            </div>
+          </CardContent>
+        </Card>
+
         {/* League Schedule */}
         <Card className="bg-gray-800 border-gray-700 mb-8">
           <CardHeader>
@@ -217,6 +247,7 @@ export function Rulebook({ onBack, onNavigateToTeams, onNavigateToLocations }: R
                   <li>• Peck Slip Social Tuesdays at 9pm</li>
                   <li>• Josie Woods Wednesdays at 9pm</li>
                   <li>• Sugar Mouse Thursdays at 9pm</li>
+                  <li>• Cowboy Tom's Fridays at 9pm</li>
                 </ul>
               </div>
               <div>

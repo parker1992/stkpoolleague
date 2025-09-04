@@ -105,7 +105,7 @@ export function Teams({ onBack, onNavigateToRulebook, onNavigateToLocations }: T
           </CardHeader>
           <CardContent className="text-gray-300 space-y-4">
             <p className="text-lg">
-              There are 4 teams to join during the summer season. Players choose their most convenient night and location as their home team.
+              There are 5 teams to join during the summer season. Players choose their most convenient night and location as their home team.
             </p>
             <p>
               Players enter each round as individuals, but represent their team in wins and raffle ticket accumulation.
@@ -204,6 +204,28 @@ export function Teams({ onBack, onNavigateToRulebook, onNavigateToLocations }: T
               </div>
               <p className="text-sm">
                 Intimate venue with a cozy atmosphere. Perfect for ending the week with competitive pool and good company.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card className="bg-gray-800 border-gray-700">
+            <CardHeader>
+              <CardTitle className="text-2xl text-red-500 flex items-center">
+                <Calendar className="w-6 h-6 mr-3" />
+                Cowboy Tom's Fridays
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="text-gray-300 space-y-4">
+              <div className="flex items-center space-x-3">
+                <MapPin className="w-5 h-5 text-red-500" />
+                <span>Cowboy Tom's</span>
+              </div>
+              <div className="flex items-center space-x-3">
+                <Calendar className="w-5 h-5 text-red-500" />
+                <span>Fridays at 9pm</span>
+              </div>
+              <p className="text-sm">
+                New bar with a brand new pool table! Great vibes with an even better Frappuccino.
               </p>
             </CardContent>
           </Card>

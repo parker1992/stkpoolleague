@@ -223,6 +223,34 @@ export function Locations({ onBack, onNavigateToRulebook, onNavigateToTeams }: L
               </p>
             </CardContent>
           </Card>
+
+          {/* Cowboy Tom's */}
+          <Card className="bg-gray-800 border-gray-700">
+            <CardHeader>
+              <CardTitle className="text-2xl text-red-500 flex items-center">
+                <MapPin className="w-6 h-6 mr-3" />
+                Cowboy Tom's
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="text-gray-300 space-y-4">
+              <div className="space-y-2">
+                <div className="flex items-start space-x-3">
+                  <MapPin className="w-5 h-5 text-red-500 mt-0.5" />
+                  <div>
+                    <p className="font-semibold text-white">120 Orchard St.</p>
+                    <p>New York, NY 10002</p>
+                  </div>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <Clock className="w-5 h-5 text-red-500" />
+                  <span>Fridays at 9pm</span>
+                </div>
+              </div>
+              <p className="text-sm">
+                Cowboy Tom's just joined the roster, and Friday nights in the LES will never be the same. They're slinging the city's best Frappuccino martini, pouring cocktails that go down smoother than a clean break, and they've got a brand-new pool table waiting for you to chalk up. The vibe? Good times only. The catch? Word's about to get out. Come play now&mdash;before TikTok blows up the spot.
+              </p>
+            </CardContent>
+          </Card>
         </div>
 
         {/* Additional Info */}

@@ -258,7 +258,7 @@ export function Rulebook({ onBack, onNavigateToTeams, onNavigateToLocations, onN
                   <li>• Peck Slip Social Tuesdays at 9pm</li>
                   <li>• Josie Woods Wednesdays at 9pm</li>
                   <li>• Sugar Mouse Thursdays at 9pm</li>
-                  <li>• Cowboy Tom's Fridays at 9pm</li>
+                  <li>• Barfly Sundays at 9pm</li>
                 </ul>
               </div>
               <div>

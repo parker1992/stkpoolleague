@@ -235,12 +235,12 @@ export function Locations({ onBack, onNavigateToRulebook, onNavigateToTeams, onN
             </CardContent>
           </Card>
 
-          {/* Cowboy Tom's */}
+          {/* Barfly */}
           <Card className="bg-gray-800 border-gray-700">
             <CardHeader>
               <CardTitle className="text-2xl text-red-500 flex items-center">
                 <MapPin className="w-6 h-6 mr-3" />
-                Cowboy Tom's
+                Barfly
               </CardTitle>
             </CardHeader>
             <CardContent className="text-gray-300 space-y-4">
@@ -248,17 +248,17 @@ export function Locations({ onBack, onNavigateToRulebook, onNavigateToTeams, onN
                 <div className="flex items-start space-x-3">
                   <MapPin className="w-5 h-5 text-red-500 mt-0.5" />
                   <div>
-                    <p className="font-semibold text-white">120 Orchard St.</p>
-                    <p>New York, NY 10002</p>
+                    <p className="font-semibold text-white">244 3rd Avenue</p>
+                    <p>New York, NY 10010</p>
                   </div>
                 </div>
                 <div className="flex items-center space-x-3">
                   <Clock className="w-5 h-5 text-red-500" />
-                  <span>Fridays at 9pm</span>
+                  <span>Sundays at 9pm</span>
                 </div>
               </div>
               <p className="text-sm">
-                Cowboy Tom's just joined the roster, and Friday nights in the LES will never be the same. They're slinging the city's best Frappuccino martini, pouring cocktails that go down smoother than a clean break, and they've got a brand-new pool table waiting for you to chalk up. The vibe? Good times only. The catch? Word's about to get out. Come play now&mdash;before TikTok blows up the spot.
+                Barfly is that perfect New York ix of grit and charm&mdash;the kind of spot where the drinks are strong, the bartenders actually care, and the pool table in the back is always calling your name. It's got that no-nonsense, after-work energy where games get competitive fast, strangers become teammates, and the crowd's just rowdy enough to keep it fun. STK nights here hit different&mdash;it's where the neighborhood meets the hustle, cue in hand, and nothing but bragging rights on the line.
               </p>
             </CardContent>
           </Card>

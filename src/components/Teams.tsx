@@ -223,20 +223,20 @@ export function Teams({ onBack, onNavigateToRulebook, onNavigateToLocations, onN
             <CardHeader>
               <CardTitle className="text-2xl text-red-500 flex items-center">
                 <Calendar className="w-6 h-6 mr-3" />
-                Cowboy Tom's Fridays
+                Barfly Sundays
               </CardTitle>
             </CardHeader>
             <CardContent className="text-gray-300 space-y-4">
               <div className="flex items-center space-x-3">
                 <MapPin className="w-5 h-5 text-red-500" />
-                <span>Cowboy Tom's</span>
+                <span>Barfly</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Calendar className="w-5 h-5 text-red-500" />
-                <span>Fridays at 9pm</span>
+                <span>Sundays at 9pm</span>
               </div>
               <p className="text-sm">
-                New bar with a brand new pool table! Great vibes with an even better Frappuccino.
+                Barfly is classic New York&mdash;loud, lively, and built for players who like their pool with a side of chaos and cold beer.
               </p>
             </CardContent>
           </Card>

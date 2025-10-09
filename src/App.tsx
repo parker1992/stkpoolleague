@@ -5,6 +5,7 @@ import { Rulebook } from '@/components/Rulebook';
 import { Teams } from '@/components/Teams';
 import { Locations } from '@/components/Locations';
 import { useState } from 'react';
+import { Schedule } from './components/Schedule';
 
 function App() {
   const [currentPage, setCurrentPage] = useState('home');
@@ -15,6 +16,7 @@ function App() {
       onBack={() => setCurrentPage('home')} 
       onNavigateToTeams={() => setCurrentPage('teams')}
       onNavigateToLocations={() => setCurrentPage('locations')}
+      onNavigateToSchedule={() => setCurrentPage('schedule')}
     />;
   }
 
@@ -23,6 +25,7 @@ function App() {
       onBack={() => setCurrentPage('home')} 
       onNavigateToRulebook={() => setCurrentPage('rulebook')}
       onNavigateToLocations={() => setCurrentPage('locations')}
+      onNavigateToSchedule={() => setCurrentPage('schedule')}
     />;
   }
 
@@ -31,11 +34,22 @@ function App() {
       onBack={() => setCurrentPage('home')} 
       onNavigateToRulebook={() => setCurrentPage('rulebook')}
       onNavigateToTeams={() => setCurrentPage('teams')}
+      onNavigateToSchedule={() => setCurrentPage('schedule')}
+    />;
+  }
+
+  if (currentPage === 'schedule') {
+    return <Schedule
+      onBack={() => setCurrentPage('home')} 
+      onNavigateToRulebook={() => setCurrentPage('rulebook')}
+      onNavigateToTeams={() => setCurrentPage('teams')}
+      onNavigateToLocations={() => setCurrentPage('locations')}
+      onNavigateToSchedule={() => setCurrentPage('schedule')}
     />;
   }
 
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen w-screen bg-black text-white">
       {/* Header */}
       <header className="border-b border-gray-800 bg-black/90 backdrop-blur-sm sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
@@ -50,6 +64,7 @@ function App() {
             <button onClick={() => setCurrentPage('rulebook')} className="text-gray-300 hover:text-white transition-colors">Rulebook</button>
             <button onClick={() => setCurrentPage('teams')} className="text-gray-300 hover:text-white transition-colors">Teams</button>
             <button onClick={() => setCurrentPage('locations')} className="text-gray-300 hover:text-white transition-colors">Locations</button>
+            <button onClick={() => setCurrentPage('schedule')} className="text-gray-300 hover:text-white transition-colors">Schedule</button>
           </nav>
           
           {/* Mobile menu button */}
@@ -100,6 +115,15 @@ function App() {
                 className="text-gray-300 hover:text-white transition-colors text-left"
               >
                 Locations
+              </button>
+              <button 
+                onClick={() => {
+                  setCurrentPage('schedule');
+                  setMobileMenuOpen(false);
+                }}
+                className="text-gray-300 hover:text-white transition-colors text-left"
+              >
+               Schedule 
               </button>
             </nav>
           </div>

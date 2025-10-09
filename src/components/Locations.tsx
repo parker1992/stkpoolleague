@@ -7,13 +7,14 @@ interface LocationsProps {
   onBack: () => void;
   onNavigateToRulebook: () => void;
   onNavigateToTeams: () => void;
+  onNavigateToSchedule: () => void;
 }
 
-export function Locations({ onBack, onNavigateToRulebook, onNavigateToTeams }: LocationsProps) {
+export function Locations({ onBack, onNavigateToRulebook, onNavigateToTeams, onNavigateToSchedule }: LocationsProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen w-screen bg-black text-white">
       {/* Header */}
       <header className="border-b border-gray-800 bg-black/90 backdrop-blur-sm sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
@@ -28,6 +29,7 @@ export function Locations({ onBack, onNavigateToRulebook, onNavigateToTeams }: L
             <button onClick={onNavigateToRulebook} className="text-gray-300 hover:text-white transition-colors">Rulebook</button>
             <button onClick={onNavigateToTeams} className="text-gray-300 hover:text-white transition-colors">Teams</button>
             <span className="text-white bg-gray-700 px-3 py-2 rounded">Locations</span>
+            <button onClick={onNavigateToSchedule} className="text-gray-300 hover:text-white transition-colors">Schedule</button>
           </nav>
           
           {/* Mobile menu button */}
@@ -73,6 +75,15 @@ export function Locations({ onBack, onNavigateToRulebook, onNavigateToTeams }: L
               <span className="text-white bg-gray-700 px-3 py-2 rounded text-left">
                 Locations
               </span>
+              <button 
+                onClick={() => {
+                  onNavigateToSchedule();
+                  setMobileMenuOpen(false);
+                }}
+                className="text-gray-300 hover:text-white transition-colors text-left"
+              >
+               Schedule 
+              </button>
             </nav>
           </div>
         )}

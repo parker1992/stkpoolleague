@@ -44,7 +44,6 @@ function App() {
       onNavigateToRulebook={() => setCurrentPage('rulebook')}
       onNavigateToTeams={() => setCurrentPage('teams')}
       onNavigateToLocations={() => setCurrentPage('locations')}
-      onNavigateToSchedule={() => setCurrentPage('schedule')}
     />;
   }
 

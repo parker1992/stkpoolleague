@@ -313,7 +313,7 @@ export function Rulebook({ onBack, onNavigateToTeams, onNavigateToLocations, onN
           </CardHeader>
           <CardContent className="text-gray-300 space-y-6">
             <div>
-              <h4 className="font-bold text-white mb-3">Price Pool &mdash; $4,000 Total</h4>
+              <h4 className="font-bold text-white mb-3">Prize Pool &mdash; $4,000 Total</h4>
               <ul className="space-y-2">
                 <li className="space-y-2">&bull; <span className="text-bold">$1,000</span> &mdash; Individual Champion</li>
                 <li className="space-y-2">&bull; <span className="text-bold">$500</span> &mdash; Second Place Individual</li>

@@ -1,4 +1,4 @@
-import { ArrowLeft, Target, Users, Calendar, Trophy, Ticket, Menu, X } from 'lucide-react';
+import { ArrowLeft, Target, Users, Calendar, Trophy, Ticket, Menu, X, Tally5, Medal } from 'lucide-react';
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -120,15 +120,15 @@ export function Rulebook({ onBack, onNavigateToTeams, onNavigateToLocations, onN
               <div>
                 <h4 className="font-semibold text-white mb-2">Player Entry Fees per Round:</h4>
                 <ul className="space-y-1">
-                  <li>• $20 (league members)</li>
-                  <li>• $25 (non-league members)</li>
+                  <li>&bull; $20 (league members)</li>
+                  <li>&bull; $25 (non-league members)</li>
                 </ul>
               </div>
               <div>
                 <h4 className="font-semibold text-white mb-2">Epic Shots Invitational:</h4>
                 <ul className="space-y-1">
-                  <li>• $25 (league members only)</li>
-                  <li>• Non-league entry limited to 3 for the season</li>
+                  <li>&bull; $25 (league members only)</li>
+                  <li>&bull; Non-league entry limited to 3 for the season</li>
                 </ul>
               </div>
             </div>
@@ -212,6 +212,23 @@ export function Rulebook({ onBack, onNavigateToTeams, onNavigateToLocations, onN
           </CardContent>
         </Card>
 
+        {/* League Schedule */}
+        <Card className="bg-gray-800 border-gray-700 mb-8">
+          <CardHeader>
+            <CardTitle className="text-2xl text-red-500 flex items-center">
+              <Calendar className="w-6 h-6 mr-3" />
+              League Schedule
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="text-gray-300">
+            <div>
+              <p>The season runs for <span className="text-bold">4 weeks</span> of scheduled matches.</p>
+              <p>Each team plays <span className="text-bold">one match per week</span> at its assigned venue or away game.</p>
+              <p>The schedule ensures every team meets all others once during the season.</p>
+            </div>
+          </CardContent>
+        </Card>
+
         {/* Nightly Showdown Format */}
         <Card className="bg-gray-800 border-gray-700 mb-8">
           <CardHeader>
@@ -238,27 +255,50 @@ export function Rulebook({ onBack, onNavigateToTeams, onNavigateToLocations, onN
             <div>
               <p>At the end of the shootout:</p>
               <ul className="space-y-2">
-                <li className="space-y-2">• <span className="text-bold">1st place</span> earns <span className="text-bold">20 bonus points</span></li>
-                <li className="space-y-2">• <span className="text-bold">2nd place</span> earns <span className="text-bold">10 bonus points</span></li>
-                <li className="space-y-2">• <span className="text-bold">3rd and 4th places</span> earn <span className="text-bold">5 bonus points each</span></li>
+                <li className="space-y-2">&bull; <span className="text-bold">1st place</span> earns <span className="text-bold">20 bonus points</span></li>
+                <li className="space-y-2">&bull; <span className="text-bold">2nd place</span> earns <span className="text-bold">10 bonus points</span></li>
+                <li className="space-y-2">&bull; <span className="text-bold">3rd and 4th places</span> earn <span className="text-bold">5 bonus points each</span></li>
               </ul>
             </div>
           </CardContent>
         </Card>
 
-        {/* League Schedule */}
+        {/* Scoring */}
         <Card className="bg-gray-800 border-gray-700 mb-8">
           <CardHeader>
             <CardTitle className="text-2xl text-red-500 flex items-center">
-              <Calendar className="w-6 h-6 mr-3" />
-              League Schedule
+              <Tally5 className="w-6 h-6 mr-3" />
+                Scoring
             </CardTitle>
           </CardHeader>
           <CardContent className="text-gray-300">
             <div>
-              <p>The season runs for <span className="text-bold">4 weeks</span> of scheduled matches.</p>
-              <p>Each team plays <span className="text-bold">one match per week</span> at its assigned venue or away game.</p>
-              <p>The schedule ensures every team meets all others once during the season.</p>
+              <p>Every pocketed ball = 1 point.</p>
+              <p>Team totals = combined points of the <span className="font-bold">top 4 players</span> from each side.</p>
+              <p>The team with the <span className="font-bold">highest total</span> at the end of the match wins and earns match points (for standings and team prizes).</p>
+              <p>
+                <ol className="space-y-2 pl-10">
+                  <li className="list-decimal space-y-2 font-bold">Top 20 Invitational qualification</li>
+                  <li className="list-decimal space-y-2 font-bold">Merch unlocks and Killah progress</li>
+                </ol>
+              </p>
+            </div>
+          </CardContent>
+        </Card>
+      
+      {/* Standings & Qualification*/}
+        <Card className="bg-gray-800 border-gray-700 mb-8">
+          <CardHeader>
+            <CardTitle className="text-2xl text-red-500 flex items-center">
+              <Medal className="w-6 h-6 mr-3" />
+                Standings & Qualification
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="text-gray-300">
+            <div>
+              <p><span className="font-bold">Team</span> wins determine their position in the league standings.</p>
+              <p><span className="font-bold">Top teams</span> advance to the <span className="font-bold">Season Invitational</span> for cash prizes.</p>
+              <p><span className="font-bold">Individual point leaders (Top 20)</span> automatically qualify for the <span className="font-bold">Invitational</span>, even if their team doesn’t.</p>
             </div>
           </CardContent>
         </Card>
@@ -273,21 +313,12 @@ export function Rulebook({ onBack, onNavigateToTeams, onNavigateToLocations, onN
           </CardHeader>
           <CardContent className="text-gray-300 space-y-6">
             <div>
-              <h4 className="font-bold text-white mb-3">Weekly Rounds (2+ per night)</h4>
-              <ul className="space-y-1">
-                <li>• Cash prizes are paid to the winner of each round</li>
-                <li>• 20% of the buy-ins are used for green fees</li>
-                <li>• $25 from the buy-ins goes toward the prize money for the Epic Shots Invitational</li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-bold text-white mb-3">Epic Shots Invitational</h4>
-              <ul className="space-y-1">
-                <li>• Weekly Invitational contributions plus $25 buy-ins from participating players are combined to pay out 1st and 2nd place players and their teams</li>
-                <li>• The player receives 50% of the payout, while the other 50% is split amongst their teammates in attendance</li>
-                <li>• 20% green fees are deducted from the total</li>
-                <li>• League members must attend a total of 4 nights to qualify or name their substitute prior to attendance</li>
-                <li>• The members of the top 2 teams are guaranteed entry into the Invitational, along with wildcard entries</li>
+              <h4 className="font-bold text-white mb-3">Price Pool &mdash; $4,000 Total</h4>
+              <ul className="space-y-2">
+                <li className="space-y-2">&bull; <span className="text-bold">$1,000</span> &mdash; Individual Champion</li>
+                <li className="space-y-2">&bull; <span className="text-bold">$500</span> &mdash; Second Place Individual</li>
+                <li className="space-y-2">&bull; <span className="text-bold">$2,000</span> &mdash; Winning Team (by cumulative points)</li>
+                <li className="space-y-2">&bull; <span className="text-bold">$500</span> &mdash; Second Place Team (by cumulative points)</li>
               </ul>
             </div>
           </CardContent>
@@ -303,9 +334,9 @@ export function Rulebook({ onBack, onNavigateToTeams, onNavigateToLocations, onN
           </CardHeader>
           <CardContent className="text-gray-300 space-y-4">
             <ul className="space-y-2">
-              <li>• Each league member receives one raffle ticket per RSVP and timely attendance upon check-in</li>
-              <li>• League Member receives one raffle ticket per home win or 2 per away win. Each of their team members also receive an extra raffle ticket on an away win</li>
-              <li>• Monthly raffles take place the last Thursday before the Epic Shots Invitational before round 1. (Players must be in attendance to claim their win or name their substitute)</li>
+              <li>&bull; Each league member receives one raffle ticket per RSVP and timely attendance upon check-in</li>
+              <li>&bull; League Member receives one raffle ticket per home win or 2 per away win. Each of their team members also receive an extra raffle ticket on an away win</li>
+              <li>&bull; Monthly raffles take place the last Thursday before the Epic Shots Invitational before round 1. (Players must be in attendance to claim their win or name their substitute)</li>
             </ul>
             <div className="bg-red-600 text-white p-4 rounded-lg mt-4">
               <h4 className="font-bold mb-2">Raffle Prizes Include:</h4>

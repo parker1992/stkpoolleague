@@ -255,17 +255,17 @@ export function Teams({ onBack, onNavigateToRulebook, onNavigateToLocations, onN
               <div>
                 <h4 className="font-bold text-white mb-3">Individual Play, Team Pride</h4>
                 <ul className="space-y-2 text-sm">
-                  <li>• Players compete individually in each round</li>
-                  <li>• Wins and raffle tickets count toward team totals</li>
-                  <li>• Away wins earn extra raffle tickets for the whole team</li>
+                  <li>&bull; Players compete individually in each round</li>
+                  <li>&bull; Wins and raffle tickets count toward team totals</li>
+                  <li>&bull; Away wins earn extra raffle tickets for the whole team</li>
                 </ul>
               </div>
               <div>
                 <h4 className="font-bold text-white mb-3">Monthly Team Championships</h4>
                 <ul className="space-y-2 text-sm">
-                  <li>• Epic Shots Invitationals at Amsterdam Billiards</li>
-                  <li>• Top 2 teams get guaranteed entry</li>
-                  <li>• Team members split 50% of prize money</li>
+                  <li>&bull; Epic Shots Invitationals at Amsterdam Billiards</li>
+                  <li>&bull; Top 2 teams get guaranteed entry</li>
+                  <li>&bull; Team members split 50% of prize money</li>
                 </ul>
               </div>
             </div>

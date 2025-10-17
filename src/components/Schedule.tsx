@@ -92,7 +92,7 @@ export function Schedule({ onBack, onNavigateToRulebook, onNavigateToTeams, onNa
             <button onClick={onBack} className="text-gray-300 hover:text-white transition-colors">Home</button>
             <button onClick={onNavigateToRulebook} className="text-gray-300 hover:text-white transition-colors">Rulebook</button>
             <button onClick={onNavigateToTeams} className="text-gray-300 hover:text-white transition-colors">Teams</button>
-            <button onClick={onNavigateToLocations} className="text-gray-300 hover:text-white transition-colors">Teams</button>
+            <button onClick={onNavigateToLocations} className="text-gray-300 hover:text-white transition-colors">Locations</button>
             <span className="text-white bg-gray-700 px-3 py-2 rounded">Schedule</span>
           </nav>
           

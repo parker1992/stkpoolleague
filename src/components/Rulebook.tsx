@@ -200,14 +200,15 @@ export function Rulebook({ onBack, onNavigateToTeams, onNavigateToLocations, onN
                 <h4 className="font-bold text-white">Peck Slip Tuesdays</h4>
               </div>
               <div className="bg-gray-700 p-4 rounded-lg">
-                <h4 className="font-bold text-white">Josie Woods Wednesdays</h4>
+                <h4 className="font-bold text-white">Josie Wood's Wednesdays</h4>
               </div>
               <div className="bg-gray-700 p-4 rounded-lg">
                 <h4 className="font-bold text-white">Sugar Mouse Thursdays</h4>
               </div>
             </div>
-            <p>Players choose their most convenient night and location as their home team. Players enter each round as individuals, but represent their team in wins and raffle ticket accumulation.</p>
-            <p>At the end of each month, teams compete at the Epic Shots Invitational at Amsterdam Billiards for the championship pot.</p>
+            <p>Each team has <span className="font-bold">10 players</span>.</p>
+            <p>A minimum of <span className="font-bold">4 players</span> (maximum of 6) from each team must play for a scheduled match or the team <span className="font-bold">forfeits</span>.</p>
+            <p>If more than 4 players play, the <span className="font-bold">top 4 performers' points</span> count towards the team totals that night.</p>
           </CardContent>
         </Card>
 
@@ -219,24 +220,28 @@ export function Rulebook({ onBack, onNavigateToTeams, onNavigateToLocations, onN
             </CardTitle>
           </CardHeader>
           <CardContent className="text-gray-300 space-y-6">
+            <p>Each match is made up of 3 rounds</p>
             <div>
-              <p>Where bullets fly and legends sharpen&mdash;each night now throws down in two high-stakes rounds before ignighting the final shootout.</p>
+              <h4 className="font-bold text-white mb-3">Round 1 &mdash; Full Buy</h4>
+              <p>Every player buys in fully. Standard scoring applies: every pocketed ball equals <span className="font-bold">1 point</span>.</p>
             </div>
             <div>
-              <h4 className="font-bold text-white mb-3">How It Breaks Down</h4>
-              <p>First and second place from each round battle it out in the shootout. Second-place players get placed into the losers bracket, so first-placers start with an extra strike buffer. Because you earned it.</p>
+              <h4 className="font-bold text-white mb-3">Round 2 &mdash; Half Buy, Double Points</h4>
+              <p>The buy-in is half the usual amount, but every pocketed ball earns <span className="text-bold">double points</span>. This roound determines who rises in total standings.</p>
             </div>
             <div>
-              <h4 className="font-bold text-white mb-3">Split the Spoils</h4>
-              <p>When the final ball drops:</p>
-              <ul className="space-y-2 font-bold">
-                <li>• Winner cashes in 40% of the pot.</li>
-                <li>• Another 40% fuels the Progressive Invitational Pot, building each night until it breaks at the finale.</li>
-                <li>• 20% goes straight to the game runner.</li>
+              <h4 className="font-bold text-white mb-3">Round 3 &mdash; Bonus Round Shootout</h4>
+              <p>The <span className="text-bold">top two players</span> from each of the first two rounds advance to the shootout.</p>
+              <p>The players who finished <span className="text-bold">first</span> in their respective rounds start with <span className="text-bold">an extra strike</span> (since they're in the winner's bracket).</p>
+              <p>The <span className="text-bold">second-place finishers</span> keep their original strike handicap and enter from the loser's bracket.</p>
+            </div>
+            <div>
+              <p>At the end of the shootout:</p>
+              <ul className="space-y-2">
+                <li className="space-y-2">• <span className="text-bold">1st place</span> earns <span className="text-bold">20 bonus points</span></li>
+                <li className="space-y-2">• <span className="text-bold">2nd place</span> earns <span className="text-bold">10 bonus points</span></li>
+                <li className="space-y-2">• <span className="text-bold">3rd and 4th places</span> earn <span className="text-bold">5 bonus points each</span></li>
               </ul>
-            </div>
-            <div>
-              <p>With a $25 buy-in, the Invitational pot can balloon&mdash;up to <span className="font-bold">$1,000 added in a single night</span>. That's what happens when everyone plays more, and every shot counts.</p>
             </div>
           </CardContent>
         </Card>
@@ -250,25 +255,10 @@ export function Rulebook({ onBack, onNavigateToTeams, onNavigateToLocations, onN
             </CardTitle>
           </CardHeader>
           <CardContent className="text-gray-300">
-            <div className="grid md:grid-cols-2 gap-6">
-              <div>
-                <h4 className="font-bold text-white mb-4">Weekly Schedule:</h4>
-                <ul className="space-y-2">
-                  <li>• Amsterdam Billiards Mondays at 9pm</li>
-                  <li>• Peck Slip Social Tuesdays at 9pm</li>
-                  <li>• Josie Woods Wednesdays at 9pm</li>
-                  <li>• Sugar Mouse Thursdays at 9pm</li>
-                  <li>• Barfly Sundays at 9pm</li>
-                </ul>
-              </div>
-              <div>
-                <h4 className="font-bold text-white mb-4">Invitationals:</h4>
-                <ul className="space-y-2">
-                  <li>• Monday, September 1, 9pm at Amsterdam Billiards</li>
-                  <li>• Monday, September 29, 9pm at Amsterdam Billiards</li>
-                  <li>• Monday, October 20, 9pm at Amsterdam Billiards</li>
-                </ul>
-              </div>
+            <div>
+              <p>The season runs for <span className="text-bold">4 weeks</span> of scheduled matches.</p>
+              <p>Each team plays <span className="text-bold">one match per week</span> at its assigned venue or away game.</p>
+              <p>The schedule ensures every team meets all others once during the season.</p>
             </div>
           </CardContent>
         </Card>

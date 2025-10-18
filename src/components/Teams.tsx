@@ -23,7 +23,7 @@ export function TeamInfo() {
     })
       .then(resp => resp.json())
       .then((data: []) => setTeams(data))
-    }, [teams]
+    }, []
   );
 
   return (

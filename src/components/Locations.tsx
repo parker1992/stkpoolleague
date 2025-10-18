@@ -24,7 +24,7 @@ export function LocationInfo() {
     })
       .then(resp => resp.json())
       .then((data: []) => setLocations(data))
-    }, [locations]
+    }, []
   );
 
   return (

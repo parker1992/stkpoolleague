@@ -24,7 +24,7 @@ export function ScheduleInformation() {
     })
       .then(resp => resp.json())
       .then((data: []) => setScheduleInformation(data))
-    }, [scheduleInformation]
+    }, []
   );
 
   const weeklyScheduleMap = scheduleInformation.reduce((schedule, element) => {

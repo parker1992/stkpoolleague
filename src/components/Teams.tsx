@@ -1,13 +1,62 @@
 import { ArrowLeft, Users, Calendar, MapPin, Trophy, Menu, X } from 'lucide-react';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { LocationModel } from '@/models/location-model';
 
 interface TeamsProps {
   onBack: () => void;
   onNavigateToRulebook: () => void;
   onNavigateToLocations: () => void;
   onNavigateToSchedule: () => void;
+}
+
+export function TeamInfo() {
+  const [teams, setTeams] = useState([]);
+
+  useEffect(() => {
+    fetch("https://api.stkpoolleague.com/v1/rdbms/db/locations", {
+      mode: "cors",
+      headers: {
+        "Accept": "application/json"
+      }
+    })
+      .then(resp => resp.json())
+      .then((data: []) => setTeams(data))
+    }, [teams]
+  );
+
+  return (
+    <div className="grid md:grid-cols-2 gap-8 mb-12">
+    {
+      teams.map((team: LocationModel) => {
+        return (
+          <Card className="bg-gray-800 border-gray-700">
+            <CardHeader>
+              <CardTitle className="text-2xl text-red-500 flex items-center">
+                <Calendar className="w-6 h-6 mr-3" />
+                {team.short_name} {team.match_day}
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="text-gray-300 space-y-4">
+              <div className="flex items-center space-x-3">
+                <MapPin className="w-5 h-5 text-red-500" />
+                <span>{team.long_name}</span>
+              </div>
+              <div className="flex items-center space-x-3">
+                <Calendar className="w-5 h-5 text-red-500" />
+                <span>{team.match_day} at {team.match_time}</span>
+              </div>
+              <p className="text-sm">
+                {team.short_description}
+              </p>
+            </CardContent>
+          </Card>
+        )
+      })
+    }
+    </div>
+  )
 }
 
 export function Teams({ onBack, onNavigateToRulebook, onNavigateToLocations, onNavigateToSchedule }: TeamsProps) {
@@ -129,118 +178,7 @@ export function Teams({ onBack, onNavigateToRulebook, onNavigateToLocations, onN
           </CardContent>
         </Card>
 
-        {/* Teams Grid */}
-        <div className="grid md:grid-cols-2 gap-8 mb-12">
-          <Card className="bg-gray-800 border-gray-700">
-            <CardHeader>
-              <CardTitle className="text-2xl text-red-500 flex items-center">
-                <Calendar className="w-6 h-6 mr-3" />
-                Amsterdam Mondays
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="text-gray-300 space-y-4">
-              <div className="flex items-center space-x-3">
-                <MapPin className="w-5 h-5 text-red-500" />
-                <span>Amsterdam Billiards</span>
-              </div>
-              <div className="flex items-center space-x-3">
-                <Calendar className="w-5 h-5 text-red-500" />
-                <span>Mondays at 9pm</span>
-              </div>
-              <p className="text-sm">
-                Home venue for the Epic Shots Invitationals. Classic NYC billiards hall with a competitive atmosphere.
-              </p>
-            </CardContent>
-          </Card>
-
-          <Card className="bg-gray-800 border-gray-700">
-            <CardHeader>
-              <CardTitle className="text-2xl text-red-500 flex items-center">
-                <Calendar className="w-6 h-6 mr-3" />
-                Peck Slip Tuesdays
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="text-gray-300 space-y-4">
-              <div className="flex items-center space-x-3">
-                <MapPin className="w-5 h-5 text-red-500" />
-                <span>Peck Slip Social</span>
-              </div>
-              <div className="flex items-center space-x-3">
-                <Calendar className="w-5 h-5 text-red-500" />
-                <span>Tuesdays at 9pm</span>
-              </div>
-              <p className="text-sm">
-                Social atmosphere with great food and drinks. Perfect for players who enjoy a relaxed competitive environment.
-              </p>
-            </CardContent>
-          </Card>
-
-          <Card className="bg-gray-800 border-gray-700">
-            <CardHeader>
-              <CardTitle className="text-2xl text-red-500 flex items-center">
-                <Calendar className="w-6 h-6 mr-3" />
-                Josie Woods Wednesdays
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="text-gray-300 space-y-4">
-              <div className="flex items-center space-x-3">
-                <MapPin className="w-5 h-5 text-red-500" />
-                <span>Josie Woods Pub</span>
-              </div>
-              <div className="flex items-center space-x-3">
-                <Calendar className="w-5 h-5 text-red-500" />
-                <span>Wednesdays at 9pm</span>
-              </div>
-              <p className="text-sm">
-                Traditional pub setting with a friendly neighborhood vibe. Great for mid-week competition and socializing.
-              </p>
-            </CardContent>
-          </Card>
-
-          <Card className="bg-gray-800 border-gray-700">
-            <CardHeader>
-              <CardTitle className="text-2xl text-red-500 flex items-center">
-                <Calendar className="w-6 h-6 mr-3" />
-                Sugar Mouse Thursdays
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="text-gray-300 space-y-4">
-              <div className="flex items-center space-x-3">
-                <MapPin className="w-5 h-5 text-red-500" />
-                <span>Sugar Mouse</span>
-              </div>
-              <div className="flex items-center space-x-3">
-                <Calendar className="w-5 h-5 text-red-500" />
-                <span>Thursdays at 9pm</span>
-              </div>
-              <p className="text-sm">
-                Intimate venue with a cozy atmosphere. Perfect for ending the week with competitive pool and good company.
-              </p>
-            </CardContent>
-          </Card>
-
-          <Card className="bg-gray-800 border-gray-700">
-            <CardHeader>
-              <CardTitle className="text-2xl text-red-500 flex items-center">
-                <Calendar className="w-6 h-6 mr-3" />
-                Barfly Sundays
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="text-gray-300 space-y-4">
-              <div className="flex items-center space-x-3">
-                <MapPin className="w-5 h-5 text-red-500" />
-                <span>Barfly</span>
-              </div>
-              <div className="flex items-center space-x-3">
-                <Calendar className="w-5 h-5 text-red-500" />
-                <span>Sundays at 9pm</span>
-              </div>
-              <p className="text-sm">
-                Barfly is classic New York&mdash;loud, lively, and built for players who like their pool with a side of chaos and cold beer.
-              </p>
-            </CardContent>
-          </Card>
-        </div>
+        <TeamInfo />
 
         {/* Team Competition */}
         <Card className="bg-gray-800 border-gray-700">

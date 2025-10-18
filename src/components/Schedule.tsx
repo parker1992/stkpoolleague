@@ -24,54 +24,55 @@ export function ScheduleInformation() {
     })
       .then(resp => resp.json())
       .then((data: []) => setScheduleInformation(data))
-    }, []);
+    }, [scheduleInformation]
+  );
 
-    const weeklyScheduleMap = scheduleInformation.reduce((schedule, element) => {
-      if (!schedule.has(element["week"])) {
-        schedule.set(element["week"], [element])
-      } else {
-        schedule.get(element["week"])?.push(element)
+  const weeklyScheduleMap = scheduleInformation.reduce((schedule, element) => {
+    if (!schedule.has(element["week"])) {
+      schedule.set(element["week"], [element])
+    } else {
+      schedule.get(element["week"])?.push(element)
+    }
+    return schedule;
+  }, new Map<number, ScheduleModel[]>())
+
+  return (
+    <div className="grid md:grid-cols-2 gap-6 p-6">
+      {
+        Array.from(weeklyScheduleMap.keys()).map(week => {
+          return (
+            <Card className="bg-gray-800 border-gray-700">
+              <CardHeader>
+                <CardTitle className="text-2xl text-red-500">Week {week}</CardTitle>
+              </CardHeader>
+
+              <div className="grid md:grid-cols-2 gap-6">
+                {weeklyScheduleMap.get(week)?.map((match: ScheduleModel) => {
+                  return (
+                    <CardContent className="text-gray-300 space-y-4">
+                      <div className="flex items-center space-x-3">
+                        <MapPin className="w-5 h-5 text-red-500" />
+                        <span>{match.location}</span>
+                      </div>
+                      <div className="flex items-center space-x-3">
+                        <Calendar className="w-5 h-5 text-red-500" />
+                        <span>
+                          {format(new Date(match.match_date), "EEEE, MMMM d")}
+                        </span>
+                      </div>
+                      <p className="text-sm">
+                        {match.away} @ {match.home}
+                      </p>
+                    </CardContent>
+                  )
+                })}
+              </div>
+            </Card>
+          )
+        })
       }
-      return schedule;
-    }, new Map<number, ScheduleModel[]>())
-
-    return (
-      <div className="grid md:grid-cols-2 gap-6 p-6">
-        {
-          Array.from(weeklyScheduleMap.keys()).map(week => {
-            return (
-              <Card className="bg-gray-800 border-gray-700">
-                <CardHeader>
-                  <CardTitle className="text-2xl text-red-500">Week {week}</CardTitle>
-                </CardHeader>
-
-                <div className="grid md:grid-cols-2 gap-6">
-                  {weeklyScheduleMap.get(week)?.map((match: ScheduleModel) => {
-                    return (
-                      <CardContent className="text-gray-300 space-y-4">
-                        <div className="flex items-center space-x-3">
-                          <MapPin className="w-5 h-5 text-red-500" />
-                          <span>{match.location}</span>
-                        </div>
-                        <div className="flex items-center space-x-3">
-                          <Calendar className="w-5 h-5 text-red-500" />
-                          <span>
-                            {format(new Date(match.match_date), "EEEE, MMMM d")}
-                          </span>
-                        </div>
-                        <p className="text-sm">
-                          {match.away} @ {match.home}
-                        </p>
-                      </CardContent>
-                    )
-                  })}
-                </div>
-              </Card>
-            )
-          })
-        }
-      </div>
-    )
+    </div>
+  )
 }
 
 export function Schedule({ onBack, onNavigateToRulebook, onNavigateToTeams, onNavigateToLocations }: ScheduleProps) {

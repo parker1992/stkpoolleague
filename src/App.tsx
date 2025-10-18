@@ -223,9 +223,9 @@ function App() {
                   Every week features cash prizes for individual performance and team achievements.
                 </p>
                 <ul className="text-gray-300 space-y-2">
-                  <li>&bull; Individual weekly prizes</li>
-                  <li>&bull; Team performance bonuses</li>
-                  <li>&bull; Consistent payout structure</li>
+                  <li>• Individual weekly prizes</li>
+                  <li>• Team performance bonuses</li>
+                  <li>• Consistent payout structure</li>
                 </ul>
               </CardContent>
             </Card>
@@ -237,9 +237,9 @@ function App() {
                   Monthly tournaments at Amsterdam Billiards with substantial prize pools.
                 </p>
                 <ul className="text-gray-300 space-y-2">
-                  <li>&bull; Monthly tournament format</li>
-                  <li>&bull; Premium venue location</li>
-                  <li>&bull; Increased prize opportunities</li>
+                  <li>• Monthly tournament format</li>
+                  <li>• Premium venue location</li>
+                  <li>• Increased prize opportunities</li>
                 </ul>
               </CardContent>
             </Card>

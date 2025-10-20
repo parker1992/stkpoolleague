@@ -1,51 +1,12 @@
 import { Target, Calendar, Trophy, Instagram, Youtube, Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { Rulebook } from '@/components/Rulebook';
-import { Teams } from '@/components/Teams';
-import { Locations } from '@/components/Locations';
 import { useState } from 'react';
-import { Schedule } from './components/Schedule';
+import { useNavigate } from 'react-router-dom';
 
 function App() {
-  const [currentPage, setCurrentPage] = useState('home');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
-  if (currentPage === 'rulebook') {
-    return <Rulebook 
-      onBack={() => setCurrentPage('home')} 
-      onNavigateToTeams={() => setCurrentPage('teams')}
-      onNavigateToLocations={() => setCurrentPage('locations')}
-      onNavigateToSchedule={() => setCurrentPage('schedule')}
-    />;
-  }
-
-  if (currentPage === 'teams') {
-    return <Teams 
-      onBack={() => setCurrentPage('home')} 
-      onNavigateToRulebook={() => setCurrentPage('rulebook')}
-      onNavigateToLocations={() => setCurrentPage('locations')}
-      onNavigateToSchedule={() => setCurrentPage('schedule')}
-    />;
-  }
-
-  if (currentPage === 'locations') {
-    return <Locations 
-      onBack={() => setCurrentPage('home')} 
-      onNavigateToRulebook={() => setCurrentPage('rulebook')}
-      onNavigateToTeams={() => setCurrentPage('teams')}
-      onNavigateToSchedule={() => setCurrentPage('schedule')}
-    />;
-  }
-
-  if (currentPage === 'schedule') {
-    return <Schedule
-      onBack={() => setCurrentPage('home')} 
-      onNavigateToRulebook={() => setCurrentPage('rulebook')}
-      onNavigateToTeams={() => setCurrentPage('teams')}
-      onNavigateToLocations={() => setCurrentPage('locations')}
-    />;
-  }
+  const navigate = useNavigate();
 
   return (
     <div className="min-h-screen w-screen bg-black text-white">
@@ -60,10 +21,10 @@ function App() {
           </div>
           <nav className="hidden md:flex items-center space-x-8">
             <a href="#home" className="text-white bg-gray-700 px-3 py-2 rounded transition-colors">Home</a>
-            <button onClick={() => setCurrentPage('rulebook')} className="text-gray-300 hover:text-white transition-colors">Rulebook</button>
-            <button onClick={() => setCurrentPage('teams')} className="text-gray-300 hover:text-white transition-colors">Teams</button>
-            <button onClick={() => setCurrentPage('locations')} className="text-gray-300 hover:text-white transition-colors">Locations</button>
-            <button onClick={() => setCurrentPage('schedule')} className="text-gray-300 hover:text-white transition-colors">Schedule</button>
+            <button onClick={() => navigate('/rulebook')} className="text-gray-300 hover:text-white transition-colors">Rulebook</button>
+            <button onClick={() => navigate('/teams')} className="text-gray-300 hover:text-white transition-colors">Teams</button>
+            <button onClick={() => navigate('/locations')} className="text-gray-300 hover:text-white transition-colors">Locations</button>
+            <button onClick={() => navigate('/schedule')} className="text-gray-300 hover:text-white transition-colors">Schedule</button>
           </nav>
           
           {/* Mobile menu button */}
@@ -81,7 +42,7 @@ function App() {
             <nav className="container mx-auto px-4 py-4 flex flex-col space-y-4">
               <button 
                 onClick={() => {
-                  setCurrentPage('home');
+                  navigate('/');
                   setMobileMenuOpen(false);
                 }}
                 className="text-white bg-gray-700 px-3 py-2 rounded transition-colors text-left"
@@ -90,7 +51,7 @@ function App() {
               </button>
               <button 
                 onClick={() => {
-                  setCurrentPage('rulebook');
+                  navigate('/rulebook');
                   setMobileMenuOpen(false);
                 }}
                 className="text-gray-300 hover:text-white transition-colors text-left"
@@ -99,7 +60,7 @@ function App() {
               </button>
               <button 
                 onClick={() => {
-                  setCurrentPage('teams');
+                  navigate('/teams');
                   setMobileMenuOpen(false);
                 }}
                 className="text-gray-300 hover:text-white transition-colors text-left"
@@ -108,7 +69,7 @@ function App() {
               </button>
               <button 
                 onClick={() => {
-                  setCurrentPage('locations');
+                  navigate('/locations');
                   setMobileMenuOpen(false);
                 }}
                 className="text-gray-300 hover:text-white transition-colors text-left"
@@ -117,7 +78,7 @@ function App() {
               </button>
               <button 
                 onClick={() => {
-                  setCurrentPage('schedule');
+                  navigate('/schedule');
                   setMobileMenuOpen(false);
                 }}
                 className="text-gray-300 hover:text-white transition-colors text-left"
@@ -152,7 +113,7 @@ function App() {
             throughout the summer season.
           </p>
           <Button 
-            onClick={() => setCurrentPage('rulebook')}
+            onClick={() => navigate('/rulebook')}
             className="bg-red-600 hover:bg-red-700 text-white font-semibold px-8 py-3 text-lg"
           >
             View Official Rulebook

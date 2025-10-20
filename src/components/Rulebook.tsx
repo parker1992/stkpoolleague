@@ -2,16 +2,11 @@ import { ArrowLeft, Target, Users, Calendar, Trophy, Ticket, Menu, X, Tally5, Me
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { useNavigate } from 'react-router-dom';
 
-interface RulebookProps {
-  onBack: () => void;
-  onNavigateToTeams: () => void;
-  onNavigateToLocations: () => void;
-  onNavigateToSchedule: () => void;
-}
-
-export function Rulebook({ onBack, onNavigateToTeams, onNavigateToLocations, onNavigateToSchedule }: RulebookProps) {
+export function Rulebook() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   return (
     <div className="min-h-screen w-screen bg-black text-white">
@@ -19,17 +14,17 @@ export function Rulebook({ onBack, onNavigateToTeams, onNavigateToLocations, onN
       <header className="border-b border-gray-800 bg-black/90 backdrop-blur-sm sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center space-x-3">
-            <button onClick={onBack} className="flex items-center space-x-3">
+            <button onClick={() => navigate('/')} className="flex items-center space-x-3">
               <img src="/STKLogo.PNG" alt="STK Pool League" className="w-10 h-10 rounded-full" />
               <span className="text-xl font-bold text-white">STK Pool League</span>
             </button>
           </div>
           <nav className="hidden md:flex items-center space-x-8">
-            <button onClick={onBack} className="text-gray-300 hover:text-white transition-colors">Home</button>
+            <button onClick={() => navigate('/')} className="text-gray-300 hover:text-white transition-colors">Home</button>
             <span className="text-white bg-gray-700 px-3 py-2 rounded">Rulebook</span>
-            <button onClick={onNavigateToTeams} className="text-gray-300 hover:text-white transition-colors">Teams</button>
-            <button onClick={onNavigateToLocations} className="text-gray-300 hover:text-white transition-colors">Locations</button>
-            <button onClick={onNavigateToSchedule} className="text-gray-300 hover:text-white transition-colors">Schedule</button>
+            <button onClick={() => navigate('/teams')} className="text-gray-300 hover:text-white transition-colors">Teams</button>
+            <button onClick={() => navigate('/locations')} className="text-gray-300 hover:text-white transition-colors">Locations</button>
+            <button onClick={() => navigate('/schedule')} className="text-gray-300 hover:text-white transition-colors">Schedule</button>
           </nav>
           
           {/* Mobile menu button */}
@@ -47,7 +42,7 @@ export function Rulebook({ onBack, onNavigateToTeams, onNavigateToLocations, onN
             <nav className="container mx-auto px-4 py-4 flex flex-col space-y-4">
               <button 
                 onClick={() => {
-                  onBack();
+                  navigate('/');
                   setMobileMenuOpen(false);
                 }}
                 className="text-gray-300 hover:text-white transition-colors text-left"
@@ -59,7 +54,7 @@ export function Rulebook({ onBack, onNavigateToTeams, onNavigateToLocations, onN
               </span>
               <button 
                 onClick={() => {
-                  onNavigateToTeams();
+                  navigate('/teams');
                   setMobileMenuOpen(false);
                 }}
                 className="text-gray-300 hover:text-white transition-colors text-left"
@@ -68,7 +63,7 @@ export function Rulebook({ onBack, onNavigateToTeams, onNavigateToLocations, onN
               </button>
               <button 
                 onClick={() => {
-                  onNavigateToLocations();
+                  navigate('locations');
                   setMobileMenuOpen(false);
                 }}
                 className="text-gray-300 hover:text-white transition-colors text-left"
@@ -77,7 +72,7 @@ export function Rulebook({ onBack, onNavigateToTeams, onNavigateToLocations, onN
               </button>
               <button 
                 onClick={() => {
-                  onNavigateToSchedule();
+                  navigate('/schedule');
                   setMobileMenuOpen(false);
                 }}
                 className="text-gray-300 hover:text-white transition-colors text-left"
@@ -92,7 +87,7 @@ export function Rulebook({ onBack, onNavigateToTeams, onNavigateToLocations, onN
       {/* Back Button */}
       <div className="container mx-auto px-4 py-6">
         <Button 
-          onClick={onBack}
+          onClick={() => navigate('/')}
           className="bg-red-600 hover:bg-red-700 text-white font-semibold px-6 py-2 mb-8"
         >
           <ArrowLeft className="w-4 h-4 mr-2" />

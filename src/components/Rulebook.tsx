@@ -113,10 +113,10 @@ export function Rulebook() {
             <p className="text-xl font-semibold text-white">$50 for 12 weeks of competition</p>
             <div className="grid md:grid-cols-2 gap-4">
               <div>
-                <h4 className="font-semibold text-white mb-2">Player Entry Fees per Round:</h4>
+                <h4 className="font-semibold text-white mb-2">Player Entry Fees:</h4>
                 <ul className="space-y-1">
-                  <li>&bull; $20 (league members)</li>
-                  <li>&bull; $25 (non-league members)</li>
+                  <li>&bull; $30 (includes 2 rounds + shootout)</li>
+                  <li>&bull; $40 (non-league members)</li>
                 </ul>
               </div>
               <div>
@@ -139,6 +139,39 @@ export function Rulebook() {
             <p>Everyone plays at once. Each player gets to shoot once per turn and they must pocket a ball. Any ball. If they miss, scratch, or foul, they get a strike. Depending on their handicap, once they reach their strike limit, they're eliminated.</p>
             <p>The player who breaks gets one extra shot if no ball is pocketed during the break. Last player standing wins the round.</p>
             <p>Players are handicapped based on APA, BCA, Fargo ratings or, if none are available, are judged by the game runner, then adjusted accordingly if needed.</p>
+          </CardContent>
+        </Card>
+
+        {/* Team Format */}
+        <Card className="bg-gray-800 border-gray-700 mb-8">
+          <CardHeader>
+            <CardTitle className="text-2xl text-red-500 flex items-center">
+              <Users className="w-6 h-6 mr-3" />
+              Team Format
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="text-gray-300 space-y-4">
+            <p>There are 4 teams to join during the summer season:</p>
+            <div className="grid md:grid-cols-2 gap-4">
+              <div className="bg-gray-700 p-4 rounded-lg">
+                <h4 className="font-bold text-white">Amsterdam Mondays</h4>
+              </div>
+              <div className="bg-gray-700 p-4 rounded-lg">
+                <h4 className="font-bold text-white">Peck Slip Tuesdays (Boot Camp)</h4>
+              </div>
+              <div className="bg-gray-700 p-4 rounded-lg">
+                <h4 className="font-bold text-white">Josie Wood's Wednesdays</h4>
+              </div>
+              <div className="bg-gray-700 p-4 rounded-lg">
+                <h4 className="font-bold text-white">Sugar Mouse Thursdays</h4>
+              </div>
+              <div className="bg-gray-700 p-4 rounded-lg">
+                <h4 className="font-bold text-white">Barfly Sundays</h4>
+              </div>
+            </div>
+            <p>Each team has <span className="font-bold">10 players</span>.</p>
+            <p>A minimum of <span className="font-bold">4 players</span> (maximum of 6) from each team must play for a scheduled match or the team <span className="font-bold">forfeits</span>.</p>
+            <p>If more than 4 players play, the <span className="font-bold">top 4 performers' points</span> count towards the team totals that night.</p>
           </CardContent>
         </Card>
 
@@ -177,36 +210,6 @@ export function Rulebook() {
           </CardContent>
         </Card>
 
-        {/* Team Format */}
-        <Card className="bg-gray-800 border-gray-700 mb-8">
-          <CardHeader>
-            <CardTitle className="text-2xl text-red-500 flex items-center">
-              <Users className="w-6 h-6 mr-3" />
-              Team Format
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="text-gray-300 space-y-4">
-            <p>There are 4 teams to join during the summer season:</p>
-            <div className="grid md:grid-cols-2 gap-4">
-              <div className="bg-gray-700 p-4 rounded-lg">
-                <h4 className="font-bold text-white">Amsterdam Mondays</h4>
-              </div>
-              <div className="bg-gray-700 p-4 rounded-lg">
-                <h4 className="font-bold text-white">Peck Slip Tuesdays</h4>
-              </div>
-              <div className="bg-gray-700 p-4 rounded-lg">
-                <h4 className="font-bold text-white">Josie Wood's Wednesdays</h4>
-              </div>
-              <div className="bg-gray-700 p-4 rounded-lg">
-                <h4 className="font-bold text-white">Sugar Mouse Thursdays</h4>
-              </div>
-            </div>
-            <p>Each team has <span className="font-bold">10 players</span>.</p>
-            <p>A minimum of <span className="font-bold">4 players</span> (maximum of 6) from each team must play for a scheduled match or the team <span className="font-bold">forfeits</span>.</p>
-            <p>If more than 4 players play, the <span className="font-bold">top 4 performers' points</span> count towards the team totals that night.</p>
-          </CardContent>
-        </Card>
-
         {/* League Schedule */}
         <Card className="bg-gray-800 border-gray-700 mb-8">
           <CardHeader>
@@ -235,12 +238,12 @@ export function Rulebook() {
           <CardContent className="text-gray-300 space-y-6">
             <p>Each match is made up of 3 rounds</p>
             <div>
-              <h4 className="font-bold text-white mb-3">Round 1 &mdash; Full Buy</h4>
-              <p>Every player buys in fully. Standard scoring applies: every pocketed ball equals <span className="font-bold">1 point</span>.</p>
+              <h4 className="font-bold text-white mb-3">Round 1</h4>
+              <p>Standard scoring applies: every pocketed ball equals <span className="font-bold">1 point</span>.</p>
             </div>
             <div>
-              <h4 className="font-bold text-white mb-3">Round 2 &mdash; Half Buy, Double Points</h4>
-              <p>The buy-in is half the usual amount, but every pocketed ball earns <span className="text-bold">double points</span>. This roound determines who rises in total standings.</p>
+              <h4 className="font-bold text-white mb-3">Round 2 &mdash; Double Points</h4>
+              <p>Every pocketed ball earns <span className="text-bold">double points</span>. This roound determines who rises in total standings.</p>
             </div>
             <div>
               <h4 className="font-bold text-white mb-3">Round 3 &mdash; Bonus Round Shootout</h4>
@@ -303,7 +306,7 @@ export function Rulebook() {
         <Card className="bg-gray-800 border-gray-700 mb-8">
           <CardHeader>
             <CardTitle className="text-2xl text-red-500 flex items-center">
-              The Invitational &mdash; November 11
+              The Invitational
             </CardTitle>
           </CardHeader>
           <CardContent className="text-gray-300 space-y-6">

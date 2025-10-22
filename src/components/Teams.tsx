@@ -92,6 +92,17 @@ export function TeamInfo() {
                       </ul>
                     </div>
                   </div> 
+                : team.short_name == 'Peck Slip' ?
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <span className="font-bold text-red-500">Boot Camp Schedule</span>
+                    <div>
+                      <ul className="space-y-2 text-sm">
+                        <li>Oct 14 &mdash; Bridge Basics</li>
+                        <li>Oct 21 &mdash; Smooth Stroke</li>
+                        <li>Oct 28 &mdash; Stance</li>
+                      </ul>
+                    </div>
+                  </div> 
                 : <></>
               }
             </CardContent>

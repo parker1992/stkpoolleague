@@ -110,7 +110,7 @@ export function Rulebook() {
             </CardTitle>
           </CardHeader>
           <CardContent className="text-gray-300 space-y-4">
-            <p className="text-xl font-semibold text-white">$50 for 12 weeks of competition throughout the summer season</p>
+            <p className="text-xl font-semibold text-white">$50 for 12 weeks of competition</p>
             <div className="grid md:grid-cols-2 gap-4">
               <div>
                 <h4 className="font-semibold text-white mb-2">Player Entry Fees per Round:</h4>
@@ -122,8 +122,8 @@ export function Rulebook() {
               <div>
                 <h4 className="font-semibold text-white mb-2">Epic Shots Invitational:</h4>
                 <ul className="space-y-1">
-                  <li>&bull; $25 (league members only)</li>
-                  <li>&bull; Non-league entry limited to 3 for the season</li>
+                  <li>&bull; $25 full buy</li>
+                  <li>&bull; $15 re-buy</li>
                 </ul>
               </div>
             </div>
@@ -220,6 +220,7 @@ export function Rulebook() {
               <p>The season runs for <span className="text-bold">4 weeks</span> of scheduled matches.</p>
               <p>Each team plays <span className="text-bold">one match per week</span> at its assigned venue or away game.</p>
               <p>The schedule ensures every team meets all others once during the season.</p>
+              <p>Free practice on non-match nights.</p>
             </div>
           </CardContent>
         </Card>
@@ -298,6 +299,40 @@ export function Rulebook() {
           </CardContent>
         </Card>
 
+        {/* Invitational */}
+        <Card className="bg-gray-800 border-gray-700 mb-8">
+          <CardHeader>
+            <CardTitle className="text-2xl text-red-500 flex items-center">
+              The Invitational &mdash; November 11
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="text-gray-300 space-y-6">
+            <p>The <span className="font-bold">STK Invitational</span> is where the season's best earn their shot at glory &mdash; and their biggest payday of the season.</p>
+            <div className="grid md:grid-cols-2 gap-6">
+              <div>
+                <h4 className="font-bold mb-2">Qualification</h4>
+                <ul className="space-y-2">
+                  <li className="space-y-2">&bull; The <span className="font-bold">top two teams</span> from league standings qualify automatically.</li>
+                  <li className="space-y-2">&bull; The <span className="font-bold">top 20 individual players</span> by points also qualify, regardless of team performance.</li>
+                  <li className="space-y-2">&bull; A <span className="font-bold">waitlist of 10 additional players</span> will be held in order of total points, ready to fill any open spots.</li>
+                </ul>
+              </div>
+              <div>
+                <h4 className="font-bold mb-2">Format</h4>
+                <p>The Invitational uses the <span className="font-bold">same 3-round match structure</span> as regular league play:</p>
+                <ul className="space-y-2">
+                  <li className="space-y-2">&bull; <span className="font-bold">Round 1:</span> full buy.</li>
+                  <li className="space-y-2">&bull; <span className="font-bold">Round 2:</span> half buy; double points.</li>
+                  <li className="space-y-2">&bull; <span className="font-bold">Round 3:</span> Shootout between the top two from each round.</li>
+                  <li className="space-y-2">&bull; First-place finishers in rounds 1 & 2 start with one extra strike.</li>
+                  <li className="space-y-2">&bull; Second-place finishers enter from the loser's bracket with their original strike handicap.</li>
+                  <li className="space-y-2">&bull; Shootout points: <span className="font-bold">1st = 20; 2nd = 10; 3rd/4th: 5</span></li>
+                </ul>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
         {/* Prizes */}
         <Card className="bg-gray-800 border-gray-700 mb-8">
           <CardHeader>
@@ -315,28 +350,45 @@ export function Rulebook() {
                 <li className="space-y-2">&bull; <span className="text-bold">$2,000</span> &mdash; Winning Team (by cumulative points)</li>
                 <li className="space-y-2">&bull; <span className="text-bold">$500</span> &mdash; Second Place Team (by cumulative points)</li>
               </ul>
+              <p>Every ball counts &mdash; and every match could define your season.</p>
             </div>
           </CardContent>
         </Card>
 
-        {/* Raffles */}
+        {/* Earn Your Drip */}
         <Card className="bg-gray-800 border-gray-700 mb-8">
           <CardHeader>
             <CardTitle className="text-2xl text-red-500 flex items-center">
               <Ticket className="w-6 h-6 mr-3" />
-              Raffles
+              Earn Your Drip
             </CardTitle>
           </CardHeader>
           <CardContent className="text-gray-300 space-y-4">
+            <p>At STK, nothing’s given — everything’s earned.</p>
+            <p>Your points don’t just show how you play… they decide what you deserve to wear.</p>
+            <p>Rack up enough, and you unlock access to the exclusive drops.</p>
             <ul className="space-y-2">
-              <li>&bull; Each league member receives one raffle ticket per RSVP and timely attendance upon check-in</li>
-              <li>&bull; League Member receives one raffle ticket per home win or 2 per away win. Each of their team members also receive an extra raffle ticket on an away win</li>
-              <li>&bull; Monthly raffles take place the last Thursday before the Epic Shots Invitational before round 1. (Players must be in attendance to claim their win or name their substitute)</li>
+              <li className="space-y-2">
+                <p className="font-bold">100 Points &mdash; Keychain</p>
+                <p>You’ve earned your tag. Buy it, rep it, and show you’re officially part of the league.</p>
+              </li>
+              <li className="space-y-2">
+                <p className="font-bold">300 Points &mdash; Custom STK Jacket</p>
+                <p>You can’t just order this. You have to earn the right to wear it. Only players with 300+ points can cop one.</p>
+              </li>
+              <li className="space-y-2">
+                <p className="font-bold">500 Points &mdash; Killah Figure</p>
+                <p>Your personal Killah comes to life once you’ve put in the work. Every win, every round — it all leads here.</p>
+              </li>
+              <li className="space-y-2">
+                <p className="font-bold">Invitational Win &mdash; Champion Patch</p>
+                <p>This one can’t be bought. Win the Invitational, and you’ll wear proof that you took it all.</p>
+              </li>
+              <li className="space-y-2">
+                <p className="font-bold">Follow <a href="https://www.instagram.com/stkpoolleague" className="hover:text-white transition-colors">@STKPoolLeague</a> on Instagram &mdash; Sticker</p>
+                <p>No points required. Hit follow, grab a sticker, and start your grind.</p>
+              </li>
             </ul>
-            <div className="bg-red-600 text-white p-4 rounded-lg mt-4">
-              <h4 className="font-bold mb-2">Raffle Prizes Include:</h4>
-              <p>Wildcard guaranteed entry into the Epic Shots Invitational, STK merchandise, Pool gear, or Team Masterclass with a pro.</p>
-            </div>
           </CardContent>
         </Card>
       </div>

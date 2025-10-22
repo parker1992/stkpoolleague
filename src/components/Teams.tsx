@@ -1,4 +1,4 @@
-import { ArrowLeft, Users, Calendar, MapPin, Trophy, Menu, X } from 'lucide-react';
+import { ArrowLeft, Users, Calendar, MapPin, Menu, X } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -44,6 +44,56 @@ export function TeamInfo() {
               <p className="text-sm">
                 {team.short_description}
               </p>
+              { team.short_name == 'Amsterdam' ?
+                <div className="grid md:grid-cols-2 gap-6">
+                  <span className="font-bold text-red-500">Schedule</span>
+                  <div>
+                    <ul className="space-y-2 text-sm">
+                      <li>Oct 13 &mdash; vs. Josie Wood's</li>
+                      <li>Oct 20 &mdash; vs. Sugar Mouse</li>
+                      <li>Oct 26 &mdash; @ Barfly</li>
+                      <li>Nov 5 &mdash; @ Barfly</li>
+                    </ul>
+                  </div>
+                </div>
+                : team.short_name == 'Sugar Mouse' ?
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <span className="font-bold text-red-500">Schedule</span>
+                    <div>
+                      <ul className="space-y-2 text-sm">
+                        <li>Oct 16 &mdash; vs. Barfly</li>
+                        <li>Oct 20 &mdash; @ Amsterdam</li>
+                        <li>Oct 30 &mdash; vs. Josie Wood's</li>
+                        <li>Nov 2 &mdash; @ Barfly</li>
+                      </ul>
+                    </div>
+                  </div>
+                : team.short_name == 'Josie Wood\'s' ?
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <span className="font-bold text-red-500">Schedule</span>
+                    <div>
+                      <ul className="space-y-2 text-sm">
+                        <li>Oct 13 &mdash; @ Amsterdam</li>
+                        <li>Oct 22 &mdash; vs. Barfly</li>
+                        <li>Oct 30 &mdash; @ Sugar Mouse</li>
+                        <li>Nov 5 &mdash; vs. Amsterdam</li>
+                      </ul>
+                    </div>
+                  </div>
+                : team.short_name == 'Barfly' ?
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <span className="font-bold text-red-500">Schedule</span>
+                    <div>
+                      <ul className="space-y-2 text-sm">
+                        <li>Oct 16 &mdash; @ Sugar Mouse</li>
+                        <li>Oct 22 &mdash; @ Josie Wood's</li>
+                        <li>Oct 26 &mdash; vs. Amsterdam</li>
+                        <li>Nov 2 &mdash; vs. Sugar Mouse</li>
+                      </ul>
+                    </div>
+                  </div> 
+                : <></>
+              }
             </CardContent>
           </Card>
         )
@@ -170,36 +220,6 @@ export function Teams() {
         </Card>
 
         <TeamInfo />
-
-        {/* Team Competition */}
-        <Card className="bg-gray-800 border-gray-700">
-          <CardHeader>
-            <CardTitle className="text-2xl text-red-500 flex items-center">
-              <Trophy className="w-6 h-6 mr-3" />
-              Team Competition & Rewards
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="text-gray-300 space-y-4">
-            <div className="grid md:grid-cols-2 gap-6">
-              <div>
-                <h4 className="font-bold text-white mb-3">Individual Play, Team Pride</h4>
-                <ul className="space-y-2 text-sm">
-                  <li>&bull; Players compete individually in each round</li>
-                  <li>&bull; Wins and raffle tickets count toward team totals</li>
-                  <li>&bull; Away wins earn extra raffle tickets for the whole team</li>
-                </ul>
-              </div>
-              <div>
-                <h4 className="font-bold text-white mb-3">Monthly Team Championships</h4>
-                <ul className="space-y-2 text-sm">
-                  <li>&bull; Epic Shots Invitationals at Amsterdam Billiards</li>
-                  <li>&bull; Top 2 teams get guaranteed entry</li>
-                  <li>&bull; Team members split 50% of prize money</li>
-                </ul>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
       </div>
     </div>
   );

@@ -161,6 +161,7 @@ export function Teams() {
               </button>
               <button 
                 onClick={() => {
+                  navigate('/rulebook');
                   setMobileMenuOpen(false);
                 }}
                 className="text-gray-300 hover:text-white transition-colors text-left"
@@ -172,6 +173,7 @@ export function Teams() {
               </span>
               <button 
                 onClick={() => {
+                  navigate('/locations');
                   setMobileMenuOpen(false);
                 }}
                 className="text-gray-300 hover:text-white transition-colors text-left"
@@ -180,6 +182,7 @@ export function Teams() {
               </button>
               <button 
                 onClick={() => {
+                  navigate('/schedule');
                   setMobileMenuOpen(false);
                 }}
                 className="text-gray-300 hover:text-white transition-colors text-left"

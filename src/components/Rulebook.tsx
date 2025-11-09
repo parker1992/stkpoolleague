@@ -1,4 +1,4 @@
-import { ArrowLeft, Target, Users, Calendar, Trophy, Ticket, Menu, X, Tally5, Medal } from 'lucide-react';
+import { ArrowLeft, Target, Users, Calendar, Trophy, Ticket, Menu, X, Tally5, Medal, ArrowLeftRight } from 'lucide-react';
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -110,22 +110,23 @@ export function Rulebook() {
             </CardTitle>
           </CardHeader>
           <CardContent className="text-gray-300 space-y-4">
-            <p className="text-xl font-semibold text-white">$50 for 12 weeks of competition</p>
             <div className="grid md:grid-cols-2 gap-4">
-              <div>
-                <h4 className="font-semibold text-white mb-2">Player Entry Fees:</h4>
-                <ul className="space-y-1">
-                  <li>&bull; $30 (includes 2 rounds + shootout)</li>
-                  <li>&bull; $40 (non-league members)</li>
-                </ul>
-              </div>
-              <div>
-                <h4 className="font-semibold text-white mb-2">Epic Shots Invitational:</h4>
-                <ul className="space-y-1">
-                  <li>&bull; $25 full buy</li>
-                  <li>&bull; $15 re-buy</li>
-                </ul>
-              </div>
+              <ul className="space-y-1">
+                <li>&bull; 10-player teams. Minimum 4 play each night.</li>
+                <li>&bull; 3 rounds per match. Every ball = 1 point.</li>
+                <li>&bull; $30 entry covers all 3 rounds.</li>
+                <li>&bull; Round 2 = double points.</li>
+                <li>&bull; Round 3 = Shootout. Top shooters battle for bonus points.</li>
+                <li>&bull; 12-week season. One match per week &mdash; home and away rotation.</li>
+              </ul>
+              <ul className="space-y-1">
+                <li>&bull; Top 4 scores per team count.</li>
+                <li>&bull; Individual points = prizes. Top 20 qualify for the March Invitational.</li>
+                <li>&bull; Team points = standings. Top 2 teams qualify automatically.</li>
+                <li>&bull; $$$ Thousands in payouts. Cash nights at home bars during away weeks &mdash; invite your friends to play.</li>
+                <li>&bull; Attendance matters. Miss nights, lose your cut.</li>
+                <li>&bull; $50 league dues for 12 week season.</li>
+              </ul>
             </div>
           </CardContent>
         </Card>
@@ -170,7 +171,7 @@ export function Rulebook() {
               </div>
             </div>
             <p>Each team has <span className="font-bold">10 players</span>.</p>
-            <p>A minimum of <span className="font-bold">4 players</span> (maximum of 6) from each team must play for a scheduled match or the team <span className="font-bold">forfeits</span>.</p>
+            <p>A minimum of <span className="font-bold">4 players</span> (maximum of 6) from each team must play for a scheduled match or the team <span className="font-bold">forfeits</span> if they cannot fill player substitutions.</p>
             <p>If more than 4 players play, the <span className="font-bold">top 4 performers' points</span> count towards the team totals that night.</p>
           </CardContent>
         </Card>
@@ -267,25 +268,62 @@ export function Rulebook() {
           <CardHeader>
             <CardTitle className="text-2xl text-red-500 flex items-center">
               <Tally5 className="w-6 h-6 mr-3" />
-                Scoring
+                Scoring in Team Matches
             </CardTitle>
           </CardHeader>
           <CardContent className="text-gray-300">
-            <div>
-              <p>Every pocketed ball = 1 point.</p>
-              <p>Team totals = combined points of the <span className="font-bold">top 4 players</span> from each side.</p>
-              <p>The team with the <span className="font-bold">highest total</span> at the end of the match wins and earns match points (for standings and team prizes).</p>
-              <p>
-                <ol className="space-y-2 pl-10">
-                  <li className="list-decimal space-y-2 font-bold">Top 20 Invitational qualification</li>
-                  <li className="list-decimal space-y-2 font-bold">Merch unlocks and Killah progress</li>
-                </ol>
-              </p>
-            </div>
+            <p className="pb-5">Each team can field up to 6 players in a match. At the end of the night, only the top 4 scores count toward the team’s total. Those 4 determine the match outcome &mdash; but every player still earns individual points toward Invitational qualification and merch unlocks.</p>
+            <p className="pb-5">Your $30 entry covers all three rounds — standard scoring in Round 1, double points in Round 2, and a high-stakes Shootout for the top shooters in Round 3.</p>
+            <p className="pb-5">Every ball pocketed earns you points toward cash, merch, and a spot in the March Invitational. Top two teams qualify automatically, and the Top 20 individual players punch their own ticket.</p>
+            <p>Cash nights at home bars run during away weeks, so you can invite your friends to play, drink, and see why this is the only pool league that feels like a night out. $50 locks in your 12-week season pass. Don’t just play — Shoot to Kill.</p>
+          </CardContent>
+        </Card>
+
+        {/* Attendance */}
+        <Card className="bg-gray-800 border-gray-700 mb-8">
+          <CardHeader>
+            <CardTitle className="text-2xl text-red-500 flex items-center">
+              How Attendance Affects Your Payout
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="text-gray-300">
+            <p className="pb-5">Your payout after the March Invitational depends on one thing &mdash; how often you show up.</p>
+            <p className="pb-5">Each player’s share of their team’s winnings is based on attendance percentage.</p>
+            <p className="pb-5">To earn 100% of your payout, you need to attend 12 matches total during the season.</p>
+            <p className="pb-5">You can make up for any missed team matches by attending cash-out nights at other STK venues.</p>
+            <p className="pb-5">Every appearance counts &mdash; whether you’re playing, supporting, or subbing in.</p>
+            <h4 className="font-bold text-white mb-3">Example:</h4>
+            <p className="pb-5">Your team wins $2,000 total.</p>
+            <p className="pb-5">If you attended 12 matches, you earn your full share ($200).</p>
+            <p className="pb-5">Attend 8 matches, earn half ($100).</p>
+            <p className="pb-5">Attend 4, earn a quarter ($50).</p>
+            <h4 className="font-bold text-white mb-3">Bottom Line:</h4>
+            <p className="pb-5">Play anywhere. Show up often.</p>
+            <p>Every match counts toward your cut &mdash; because loyalty deserves to get paid.</p>
           </CardContent>
         </Card>
       
-      {/* Standings & Qualification*/}
+        {/* Subbing */}
+        <Card className="bg-gray-800 border-gray-700 mb-8">
+          <CardHeader>
+            <CardTitle className="text-2xl text-red-500 flex items-center">
+              <ArrowLeftRight className="w-6 h-6 mr-3" />
+              Subbing for Other Teams
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="text-gray-300">
+            <p className="pb-5">Any player can sub for another team during the season.</p>
+            <p className="pb-5">If that team goes on to win the Invitational, the sub receives a cut of that team’s prize, based on how many matches they played with them.</p>
+            <p className="pb-5">So the more teams you help, the more chances you have to get paid.</p>
+            <h4 className="font-bold text-white mb-3">Example:</h4>
+            <p className="pb-5">You’re a regular on Team A but sub for Team B twice:</p>
+            <p className="pb-5">Team B wins $2,000 at the Invitational &rarr; you get a pro-rated share of their winnings based on your attendance with them.</p>
+            <h4 className="font-bold text-white mb-3">Be the ultimate team player:</h4>
+            <p className="pb-5">Show up. Play anywhere. Help teams win — and get rewarded for every night you put in the work.</p>
+          </CardContent>
+        </Card>
+      
+        {/* Standings & Qualification*/}
         <Card className="bg-gray-800 border-gray-700 mb-8">
           <CardHeader>
             <CardTitle className="text-2xl text-red-500 flex items-center">
@@ -346,12 +384,16 @@ export function Rulebook() {
           </CardHeader>
           <CardContent className="text-gray-300 space-y-6">
             <div>
-              <h4 className="font-bold text-white mb-3">Prize Pool &mdash; $4,000 Total</h4>
               <ul className="space-y-2">
-                <li className="space-y-2">&bull; <span className="text-bold">$1,000</span> &mdash; Individual Champion</li>
-                <li className="space-y-2">&bull; <span className="text-bold">$500</span> &mdash; Second Place Individual</li>
-                <li className="space-y-2">&bull; <span className="text-bold">$2,000</span> &mdash; Winning Team (by cumulative points)</li>
-                <li className="space-y-2">&bull; <span className="text-bold">$500</span> &mdash; Second Place Team (by cumulative points)</li>
+                <li className="space-y-2">&bull; <span className="text-bold">$2,000</span> &mdash; Individual Champion</li>
+                <li className="space-y-2">&bull; <span className="text-bold">$1,000</span> &mdash; Second Place Individual</li>
+                <li className="space-y-2">&bull; <span className="text-bold">$500</span> &mdash; Third Place Individual</li>
+                <li className="space-y-2">&bull; <span className="text-bold">$2,000</span> &mdash; Winning team (by cumulative team points)</li>
+                <li className="space-y-2">&bull; <span className="text-bold">$2,000</span> &mdash; Second place team</li>
+                <li className="space-y-2">&bull; <span className="text-bold">$500</span> &mdash; Top attendance</li>
+                <li className="space-y-2">&bull; <span className="text-bold">$250</span> &mdash; Most improved player</li>
+                <li className="space-y-2">&bull; Earn a 2hr private lesson for every 250 points earned</li>
+                <li className="space-y-2">&bull; Earn a masterclass from a pro for every 500 points earned</li>
               </ul>
               <p>Every ball counts &mdash; and every match could define your season.</p>
             </div>

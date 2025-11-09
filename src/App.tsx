@@ -110,7 +110,7 @@ function App() {
           </p>
           <p className="text-lg text-gray-300 mb-8 max-w-2xl mx-auto">
             Weekly cash prizes, monthly Epic Shots Invitationals, and exclusive raffle access
-            throughout the summer season.
+            throughout Season 2.
           </p>
           <Button 
             onClick={() => navigate('/rulebook')}
@@ -135,7 +135,7 @@ function App() {
                   <Target className="h-8 w-8 text-white" />
                 </div>
                 <h3 className="text-2xl font-bold text-white mb-2">12 Weeks</h3>
-                <p className="text-gray-300">Summer Season</p>
+                <p className="text-gray-300">Season 2</p>
               </CardContent>
             </Card>
 

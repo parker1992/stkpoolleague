@@ -121,6 +121,27 @@ function App() {
         </div>
       </section>
 
+      {/* Caption Section */}
+      <section id="caption" className="py-10 px-4 text-center bg-gray-900">
+        <div className="container mx-auto max-w-4xl">
+          <p className="text-lg text-gray-300 mb-8 max-w-2xl mx-auto">
+            Where pool meets nightlife.
+          </p>
+          <p className="text-lg text-gray-300 mb-8 max-w-2xl mx-auto">
+            More fun. More payouts. More people you actually want to play with.
+          </p>
+          <p className="text-lg text-gray-300 mb-8 max-w-2xl mx-auto">
+            Build your team. Win money. Talk shit. Repeat.
+          </p>
+          <p className="text-lg text-gray-300 mb-8 max-w-2xl mx-auto">
+            We don’t do quiet leagues. We do shot-for-shot chaos.
+          </p>
+          <p className="text-lg text-gray-300 mb-8 max-w-2xl mx-auto">
+            The saga continues…
+          </p>
+        </div>
+      </section>
+
       {/* Season Format Section */}
       <section id="season-format" className="py-20 px-4 bg-gray-800">
         <div className="container mx-auto">
@@ -144,8 +165,9 @@ function App() {
                 <div className="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-6">
                   <Calendar className="h-8 w-8 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-2">5 Teams</h3>
+                <h3 className="text-2xl font-bold text-white mb-2">4 Teams</h3>
                 <h3 className="text-2xl font-bold text-white mb-2">5 Venues</h3>
+                <h3 className="text-2xl font-bold text-white mb-2">Weekly Bootcamp</h3>
                 <p className="text-gray-300">Weeknight Competition</p>
               </CardContent>
             </Card>

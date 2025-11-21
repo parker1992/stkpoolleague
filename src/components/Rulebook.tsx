@@ -224,7 +224,7 @@ export function Rulebook() {
               <p>The season runs for <span className="text-bold">4 weeks</span> of scheduled matches.</p>
               <p>Each team plays <span className="text-bold">one match per week</span> at its assigned venue or away game.</p>
               <p>The schedule ensures every team meets all others once during the season.</p>
-              <p>Free practice on non-match nights.</p>
+              <p>Cash prizes on non-match nights.</p>
             </div>
           </CardContent>
         </Card>

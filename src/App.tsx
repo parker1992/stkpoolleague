@@ -220,7 +220,6 @@ function App() {
                   Monthly tournaments at Amsterdam Billiards with substantial prize pools.
                 </p>
                 <ul className="text-gray-300 space-y-2">
-                  <li>• Monthly tournament format</li>
                   <li>• Premium venue location</li>
                   <li>• Increased prize opportunities</li>
                 </ul>

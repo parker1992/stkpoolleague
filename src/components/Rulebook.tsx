@@ -385,15 +385,9 @@ export function Rulebook() {
           <CardContent className="text-gray-300 space-y-6">
             <div>
               <ul className="space-y-2">
-                <li className="space-y-2">&bull; <span className="text-bold">$2,000</span> &mdash; Individual Champion</li>
-                <li className="space-y-2">&bull; <span className="text-bold">$1,000</span> &mdash; Second Place Individual</li>
-                <li className="space-y-2">&bull; <span className="text-bold">$500</span> &mdash; Third Place Individual</li>
-                <li className="space-y-2">&bull; <span className="text-bold">$2,000</span> &mdash; Winning team (by cumulative team points)</li>
-                <li className="space-y-2">&bull; <span className="text-bold">$2,000</span> &mdash; Second place team</li>
-                <li className="space-y-2">&bull; <span className="text-bold">$500</span> &mdash; Top attendance</li>
-                <li className="space-y-2">&bull; <span className="text-bold">$250</span> &mdash; Most improved player</li>
-                <li className="space-y-2">&bull; Earn a 2hr private lesson for every 250 points earned</li>
-                <li className="space-y-2">&bull; Earn a masterclass from a pro for every 500 points earned</li>
+                <li className="space-y-2">&bull; <span className="text-bold">$2,000</span> &mdash; First place team</li>
+                <li className="space-y-2">&bull; <span className="text-bold">$1,000</span> &mdash; First place individual</li>
+                <li className="space-y-2">&bull; <span className="text-bold">$500</span> &mdash; Second place team and individual</li>
               </ul>
               <p>Every ball counts &mdash; and every match could define your season.</p>
             </div>

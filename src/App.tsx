@@ -109,7 +109,7 @@ function App() {
             League Membership: $50 / Season
           </p>
           <p className="text-lg text-gray-300 mb-8 max-w-2xl mx-auto">
-            Weekly cash prizes, monthly Epic Shots Invitationals, and exclusive raffle access
+            Weekly cash prizes, Epic Shots Invitationals, and exclusive raffle access
             throughout Season 2.
           </p>
           <Button 
@@ -177,7 +177,7 @@ function App() {
                 <div className="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-6">
                   <Trophy className="h-8 w-8 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-2">Monthly Invitationals</h3>
+                <h3 className="text-2xl font-bold text-white mb-2">Epic Shots Invitationals</h3>
                 <p className="text-gray-300">At Amsterdam Billiards</p>
               </CardContent>
             </Card>
@@ -185,7 +185,7 @@ function App() {
 
           <div className="bg-red-600 text-white text-center py-6 px-8 rounded-lg">
             <p className="text-xl font-semibold">
-              Monthly Epic Shots Invitationals with cash prizes for players and teams.
+              Epic Shots Invitationals with cash prizes for players and teams.
             </p>
           </div>
         </div>
@@ -217,7 +217,7 @@ function App() {
               <CardContent className="pt-6">
                 <h3 className="text-xl font-bold text-white mb-4">Epic Shots Invitationals</h3>
                 <p className="text-gray-300 mb-4">
-                  Monthly tournaments at Amsterdam Billiards with substantial prize pools.
+                  Tournaments at Amsterdam Billiards with substantial prize pools.
                 </p>
                 <ul className="text-gray-300 space-y-2">
                   <li>• Premium venue location</li>

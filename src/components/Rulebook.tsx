@@ -111,22 +111,30 @@ export function Rulebook() {
           </CardHeader>
           <CardContent className="text-gray-300 space-y-4">
             <div className="grid md:grid-cols-2 gap-4">
-              <ul className="space-y-1">
-                <li>&bull; 10-player teams. Minimum 4 play each night.</li>
-                <li>&bull; 3 rounds per match. Every ball = 1 point.</li>
-                <li>&bull; $30 entry covers all 3 rounds.</li>
-                <li>&bull; Round 2 = double points.</li>
-                <li>&bull; Round 3 = Shootout. Top shooters battle for bonus points.</li>
-                <li>&bull; 12-week season. One match per week &mdash; home and away rotation.</li>
-              </ul>
-              <ul className="space-y-1">
-                <li>&bull; Top 4 scores per team count.</li>
-                <li>&bull; Individual points = prizes. Top 20 qualify for the March Invitational.</li>
-                <li>&bull; Team points = standings. Top 2 teams qualify automatically.</li>
-                <li>&bull; $$$ Thousands in payouts. Cash nights at home bars during away weeks &mdash; invite your friends to play.</li>
-                <li>&bull; Attendance matters. Miss nights, lose your cut.</li>
-                <li>&bull; $50 league dues for 12 week season.</li>
-              </ul>
+              <div className="space-y-4">
+                <div className="bg-gray-700 p-4 rounded-lg">
+                  <h4 className="font-bold text-white mb-2">League Dues: $50 per season</h4>
+                  <p className="text-sm">Covers official STK membership, eligibility for points, rewards, and access to all league activations.</p>
+                </div>
+                <div className="bg-gray-700 p-4 rounded-lg">
+                  <h4 className="font-bold text-white mb-2">Green Fees: $30 per night you play</h4>
+                  <p className="text-sm">This goes directly into that night’s action and cash programming.</p>
+                </div>
+                <div className="bg-gray-700 p-4 rounded-lg">
+                  <h4 className="font-bold text-white mb-2">Point System</h4>
+                  <p className="text-sm">Earn points every time you show up and play. Points can be exchanged for private lessons, masterclasses with pros or used to unlock STK merchandise.</p>
+                </div>
+              </div>
+              <div className="space-y-4">
+                <div className="bg-gray-700 p-4 rounded-lg">
+                  <h4 className="font-bold text-white mb-2">Member Perks</h4>
+                  <p className="text-sm">Access to sponsor-backed spirits tastings, special events, pop-ups, and partner activations throughout the season.</p>
+                </div>
+                <div className="bg-gray-700 p-4 rounded-lg">
+                  <h4 className="font-bold text-white mb-2">STK Extras</h4>
+                  <p className="text-sm">Priority invites to special tournaments, brand experiences, partner giveaways, and other chaos we cook up when the vibe is right.</p>
+                </div>
+              </div>
             </div>
           </CardContent>
         </Card>
@@ -272,9 +280,9 @@ export function Rulebook() {
             </CardTitle>
           </CardHeader>
           <CardContent className="text-gray-300">
-            <p className="pb-5">Each team can field up to 6 players in a match. At the end of the night, only the top 4 scores count toward the team’s total. Those 4 determine the match outcome &mdash; but every player still earns individual points toward Invitational qualification and merch unlocks.</p>
+            <p className="pb-5">Each team can field up to 6 players in a match. At the end of the night, only the top 4 scores count toward the team’s total. Those 4 determine the match outcome &mdash; but every player still earns individual points toward the Epic Shots Invitational qualification and merch unlocks.</p>
             <p className="pb-5">Your $30 entry covers all three rounds — standard scoring in Round 1, double points in Round 2, and a high-stakes Shootout for the top shooters in Round 3.</p>
-            <p className="pb-5">Every ball pocketed earns you points toward cash, merch, and a spot in the March Invitational. Top two teams qualify automatically, and the Top 20 individual players punch their own ticket.</p>
+            <p className="pb-5">Every ball pocketed earns you points toward cash, merch, and a spot in the Epic Shots Invitational. Top two teams qualify automatically, and the Top 20 individual players punch their own ticket.</p>
             <p>Cash nights at home bars run during away weeks, so you can invite your friends to play, drink, and see why this is the only pool league that feels like a night out. $50 locks in your 12-week season pass. Don’t just play — Shoot to Kill.</p>
           </CardContent>
         </Card>
@@ -287,7 +295,7 @@ export function Rulebook() {
             </CardTitle>
           </CardHeader>
           <CardContent className="text-gray-300">
-            <p className="pb-5">Your payout after the March Invitational depends on one thing &mdash; how often you show up.</p>
+            <p className="pb-5">Your payout after the Epic Shots Invitational depends on one thing &mdash; how often you show up.</p>
             <p className="pb-5">Each player’s share of their team’s winnings is based on attendance percentage.</p>
             <p className="pb-5">To earn 100% of your payout, you need to attend 12 matches total during the season.</p>
             <p className="pb-5">You can make up for any missed team matches by attending cash-out nights at other STK venues.</p>
@@ -313,11 +321,11 @@ export function Rulebook() {
           </CardHeader>
           <CardContent className="text-gray-300">
             <p className="pb-5">Any player can sub for another team during the season.</p>
-            <p className="pb-5">If that team goes on to win the Invitational, the sub receives a cut of that team’s prize, based on how many matches they played with them.</p>
+            <p className="pb-5">If that team goes on to win the Epic Shots Invitational, the sub receives a cut of that team’s prize, based on how many matches they played with them.</p>
             <p className="pb-5">So the more teams you help, the more chances you have to get paid.</p>
             <h4 className="font-bold text-white mb-3">Example:</h4>
             <p className="pb-5">You’re a regular on Team A but sub for Team B twice:</p>
-            <p className="pb-5">Team B wins $2,000 at the Invitational &rarr; you get a pro-rated share of their winnings based on your attendance with them.</p>
+            <p className="pb-5">Team B wins $2,000 at the Epic Shots Invitational &rarr; you get a pro-rated share of their winnings based on your attendance with them.</p>
             <h4 className="font-bold text-white mb-3">Be the ultimate team player:</h4>
             <p className="pb-5">Show up. Play anywhere. Help teams win — and get rewarded for every night you put in the work.</p>
           </CardContent>
@@ -334,8 +342,8 @@ export function Rulebook() {
           <CardContent className="text-gray-300">
             <div>
               <p><span className="font-bold">Team</span> wins determine their position in the league standings.</p>
-              <p><span className="font-bold">Top teams</span> advance to the <span className="font-bold">Season Invitational</span> for cash prizes.</p>
-              <p><span className="font-bold">Individual point leaders (Top 20)</span> automatically qualify for the <span className="font-bold">Invitational</span>, even if their team doesn’t.</p>
+              <p><span className="font-bold">Top teams</span> advance to the <span className="font-bold">Season Epic Shots Invitational</span> for cash prizes.</p>
+              <p><span className="font-bold">Individual point leaders (Top 20)</span> automatically qualify for the <span className="font-bold">Epic Shots Invitational</span>, even if their team doesn’t.</p>
             </div>
           </CardContent>
         </Card>
@@ -344,11 +352,11 @@ export function Rulebook() {
         <Card className="bg-gray-800 border-gray-700 mb-8">
           <CardHeader>
             <CardTitle className="text-2xl text-red-500 flex items-center">
-              The Invitational
+              The Epic Shots Invitational
             </CardTitle>
           </CardHeader>
           <CardContent className="text-gray-300 space-y-6">
-            <p>The <span className="font-bold">STK Invitational</span> is where the season's best earn their shot at glory &mdash; and their biggest payday of the season.</p>
+            <p>The <span className="font-bold">STK Epic Shots Invitational</span> is where the season's best earn their shot at glory &mdash; and their biggest payday of the season.</p>
             <div className="grid md:grid-cols-2 gap-6">
               <div>
                 <h4 className="font-bold mb-2">Qualification</h4>
@@ -360,7 +368,7 @@ export function Rulebook() {
               </div>
               <div>
                 <h4 className="font-bold mb-2">Format</h4>
-                <p>The Invitational uses the <span className="font-bold">same 3-round match structure</span> as regular league play:</p>
+                <p>The Epic Shots Invitational uses the <span className="font-bold">same 3-round match structure</span> as regular league play:</p>
                 <ul className="space-y-2">
                   <li className="space-y-2">&bull; <span className="font-bold">Round 1:</span> full buy.</li>
                   <li className="space-y-2">&bull; <span className="font-bold">Round 2:</span> half buy; double points.</li>
@@ -420,8 +428,8 @@ export function Rulebook() {
                 <p>Your personal Killah comes to life once you’ve put in the work. Every win, every round — it all leads here.</p>
               </li>
               <li className="space-y-2">
-                <p className="font-bold">Invitational Win &mdash; Champion Patch</p>
-                <p>This one can’t be bought. Win the Invitational, and you’ll wear proof that you took it all.</p>
+                <p className="font-bold">Epic Shots Invitational Win &mdash; Champion Patch</p>
+                <p>This one can’t be bought. Win the Epic Shots Invitational, and you’ll wear proof that you took it all.</p>
               </li>
               <li className="space-y-2">
                 <p className="font-bold">Follow <a href="https://www.instagram.com/stkpoolleague" className="hover:text-white transition-colors">@STKPoolLeague</a> on Instagram &mdash; Sticker</p>

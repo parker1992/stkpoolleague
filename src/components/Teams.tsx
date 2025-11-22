@@ -227,7 +227,7 @@ export function Teams() {
             </p>
             <div className="bg-red-600 text-white p-4 rounded-lg">
               <p className="font-semibold">
-                At the end of each month, teams compete at the Epic Shots Invitational at Amsterdam Billiards for the championship pot.
+                Teams compete at the Epic Shots Invitational at Amsterdam Billiards for the championship pot.
               </p>
             </div>
           </CardContent>

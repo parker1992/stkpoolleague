@@ -1,118 +1,8 @@
 import { ArrowLeft, Users, Calendar, MapPin, Menu, X } from 'lucide-react';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { LocationModel } from '@/models/location-model';
 import { useNavigate } from 'react-router-dom';
-
-export function TeamInfo() {
-  const [teams, setTeams] = useState([]);
-
-  useEffect(() => {
-    fetch("https://api.stkpoolleague.com/v1/rdbms/db/locations", {
-      mode: "cors",
-      headers: {
-        "Accept": "application/json"
-      }
-    })
-      .then(resp => resp.json())
-      .then((data: []) => setTeams(data))
-    }, []
-  );
-
-  return (
-    <div className="grid md:grid-cols-2 gap-8 mb-12">
-    {
-      teams.map((team: LocationModel) => {
-        return (
-          <Card className="bg-gray-800 border-gray-700">
-            <CardHeader>
-              <CardTitle className="text-2xl text-red-500 flex items-center">
-                <Calendar className="w-6 h-6 mr-3" />
-                {team.short_name} {team.match_day}
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="text-gray-300 space-y-4">
-              <div className="flex items-center space-x-3">
-                <MapPin className="w-5 h-5 text-red-500" />
-                <span>{team.long_name}</span>
-              </div>
-              <div className="flex items-center space-x-3">
-                <Calendar className="w-5 h-5 text-red-500" />
-                <span>{team.match_day} at {team.match_time}</span>
-              </div>
-              <p className="text-sm">
-                {team.short_description}
-              </p>
-              { team.short_name == 'Amsterdam' ?
-                <div className="grid md:grid-cols-2 gap-6">
-                  <span className="font-bold text-red-500">Schedule</span>
-                  <div>
-                    <ul className="space-y-2 text-sm">
-                      <li>Oct 13 &mdash; vs. Josie Wood's</li>
-                      <li>Oct 20 &mdash; vs. Sugar Mouse</li>
-                      <li>Oct 26 &mdash; @ Barfly</li>
-                      <li>Nov 5 &mdash; @ Barfly</li>
-                    </ul>
-                  </div>
-                </div>
-                : team.short_name == 'Sugar Mouse' ?
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <span className="font-bold text-red-500">Schedule</span>
-                    <div>
-                      <ul className="space-y-2 text-sm">
-                        <li>Oct 16 &mdash; vs. Barfly</li>
-                        <li>Oct 20 &mdash; @ Amsterdam</li>
-                        <li>Oct 30 &mdash; vs. Josie Wood's</li>
-                        <li>Nov 2 &mdash; @ Barfly</li>
-                      </ul>
-                    </div>
-                  </div>
-                : team.short_name == 'Josie Wood\'s' ?
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <span className="font-bold text-red-500">Schedule</span>
-                    <div>
-                      <ul className="space-y-2 text-sm">
-                        <li>Oct 13 &mdash; @ Amsterdam</li>
-                        <li>Oct 22 &mdash; vs. Barfly</li>
-                        <li>Oct 30 &mdash; @ Sugar Mouse</li>
-                        <li>Nov 5 &mdash; vs. Amsterdam</li>
-                      </ul>
-                    </div>
-                  </div>
-                : team.short_name == 'Barfly' ?
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <span className="font-bold text-red-500">Schedule</span>
-                    <div>
-                      <ul className="space-y-2 text-sm">
-                        <li>Oct 16 &mdash; @ Sugar Mouse</li>
-                        <li>Oct 22 &mdash; @ Josie Wood's</li>
-                        <li>Oct 26 &mdash; vs. Amsterdam</li>
-                        <li>Nov 2 &mdash; vs. Sugar Mouse</li>
-                      </ul>
-                    </div>
-                  </div> 
-                : team.short_name == 'Peck Slip' ?
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <span className="font-bold text-red-500">Boot Camp Schedule</span>
-                    <div>
-                      <ul className="space-y-2 text-sm">
-                        <li>Oct 14 &mdash; Bridge Basics</li>
-                        <li>Oct 21 &mdash; Smooth Stroke</li>
-                        <li>Oct 28 &mdash; Stance</li>
-                      </ul>
-                    </div>
-                  </div> 
-                : <></>
-              }
-            </CardContent>
-          </Card>
-        )
-      })
-    }
-    </div>
-  )
-}
 
 export function Teams() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -233,7 +123,167 @@ export function Teams() {
           </CardContent>
         </Card>
 
-        <TeamInfo />
+        <div className="grid md:grid-cols-2 gap-8 mb-12">
+          <Card className="bg-gray-800 border-gray-700">
+            <CardHeader>
+              <CardTitle className="text-2xl text-red-500 flex items-center">
+                <Calendar className="w-6 h-6 mr-3" />
+                Amsterdam Mondays
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="text-gray-300 space-y-4">
+              <div className="flex items-center space-x-3">
+                <MapPin className="w-5 h-5 text-red-500" />
+                <span>Amsterdam Billiards</span>
+              </div>
+              <div className="flex items-center space-x-3">
+                <Calendar className="w-5 h-5 text-red-500" />
+                <span>Mondays at 9pm</span>
+              </div>
+              <p className="text-sm">
+                Home venue for the Epic Shots Invitationals. Classic NYC billiards hall with a competitive atmosphere.
+              </p>
+              <div className="grid md:grid-cols-2 gap-6">
+                <span className="font-bold text-red-500">Schedule</span>
+                <div>
+                  <ul className="space-y-2 text-sm">
+                    <li>Oct 13 &mdash; vs. Josie Wood's</li>
+                    <li>Oct 20 &mdash; vs. Sugar Mouse</li>
+                    <li>Oct 26 &mdash; @ Barfly</li>
+                    <li>Nov 5 &mdash; @ Barfly</li>
+                  </ul>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+          <Card className="bg-gray-800 border-gray-700">
+            <CardHeader>
+              <CardTitle className="text-2xl text-red-500 flex items-center">
+                <Calendar className="w-6 h-6 mr-3" />
+                Peck Slip Tuesdays
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="text-gray-300 space-y-4">
+              <div className="flex items-center space-x-3">
+                <MapPin className="w-5 h-5 text-red-500" />
+                <span>Peck Slip Social</span>
+              </div>
+              <div className="flex items-center space-x-3">
+                <Calendar className="w-5 h-5 text-red-500" />
+                <span>Tuesdays at 9pm</span>
+              </div>
+              <p className="text-sm">
+                Social atmosphere with great food and drinks. Perfect for players who enjoy a relaxed competitive environment.
+              </p>
+              <div className="grid md:grid-cols-2 gap-6">
+                <span className="font-bold text-red-500">Boot Camp Schedule</span>
+                <div>
+                  <ul className="space-y-2 text-sm">
+                    <li>Oct 14 &mdash; Bridge Basics</li>
+                    <li>Oct 21 &mdash; Smooth Stroke</li>
+                    <li>Oct 28 &mdash; Stance</li>
+                  </ul>
+                </div>
+              </div> 
+            </CardContent>
+          </Card>
+          <Card className="bg-gray-800 border-gray-700">
+            <CardHeader>
+              <CardTitle className="text-2xl text-red-500 flex items-center">
+                <Calendar className="w-6 h-6 mr-3" />
+                Josie Wood's Wednesdays
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="text-gray-300 space-y-4">
+              <div className="flex items-center space-x-3">
+                <MapPin className="w-5 h-5 text-red-500" />
+                <span>Josie Wood's Pub</span>
+              </div>
+              <div className="flex items-center space-x-3">
+                <Calendar className="w-5 h-5 text-red-500" />
+                <span>Wednesdays at 9pm</span>
+              </div>
+              <p className="text-sm">
+                Traditional pub setting with a friendly neighborhood vibe. Great for mid-week competition and socializing.
+              </p>
+              <div className="grid md:grid-cols-2 gap-6">
+                <span className="font-bold text-red-500">Schedule</span>
+                <div>
+                  <ul className="space-y-2 text-sm">
+                    <li>Oct 13 &mdash; @ Amsterdam</li>
+                    <li>Oct 22 &mdash; vs. Barfly</li>
+                    <li>Oct 30 &mdash; @ Sugar Mouse</li>
+                    <li>Nov 5 &mdash; vs. Amsterdam</li>
+                  </ul>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+          <Card className="bg-gray-800 border-gray-700">
+            <CardHeader>
+              <CardTitle className="text-2xl text-red-500 flex items-center">
+                <Calendar className="w-6 h-6 mr-3" />
+                Sugar Mouse Thursdays
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="text-gray-300 space-y-4">
+              <div className="flex items-center space-x-3">
+                <MapPin className="w-5 h-5 text-red-500" />
+                <span>Sugar Mouse</span>
+              </div>
+              <div className="flex items-center space-x-3">
+                <Calendar className="w-5 h-5 text-red-500" />
+                <span>Thursdays at 9pm</span>
+              </div>
+              <p className="text-sm">
+                Intimate venue with a cozy atmosphere. Perfect for ending the week with competitive pool and good company.
+              </p>
+              <div className="grid md:grid-cols-2 gap-6">
+                <span className="font-bold text-red-500">Schedule</span>
+                <div>
+                  <ul className="space-y-2 text-sm">
+                    <li>Oct 16 &mdash; vs. Barfly</li>
+                    <li>Oct 20 &mdash; @ Amsterdam</li>
+                    <li>Oct 30 &mdash; vs. Josie Wood's</li>
+                    <li>Nov 2 &mdash; @ Barfly</li>
+                  </ul>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+          <Card className="bg-gray-800 border-gray-700">
+            <CardHeader>
+              <CardTitle className="text-2xl text-red-500 flex items-center">
+                <Calendar className="w-6 h-6 mr-3" />
+                Barfly Sundays
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="text-gray-300 space-y-4">
+              <div className="flex items-center space-x-3">
+                <MapPin className="w-5 h-5 text-red-500" />
+                <span>Barfly</span>
+              </div>
+              <div className="flex items-center space-x-3">
+                <Calendar className="w-5 h-5 text-red-500" />
+                <span>Sundays at 9pm</span>
+              </div>
+              <p className="text-sm">
+                Barfly is classic New York—loud, lively, and built for players who like their pool with a side of chaos and cold beer.
+              </p>
+                <div className="grid md:grid-cols-2 gap-6">
+                  <span className="font-bold text-red-500">Schedule</span>
+                  <div>
+                    <ul className="space-y-2 text-sm">
+                      <li>Oct 16 &mdash; @ Sugar Mouse</li>
+                      <li>Oct 22 &mdash; @ Josie Wood's</li>
+                      <li>Oct 26 &mdash; vs. Amsterdam</li>
+                      <li>Nov 2 &mdash; vs. Sugar Mouse</li>
+                    </ul>
+                  </div>
+                </div> 
+            </CardContent>
+          </Card>
+        </div>
       </div>
     </div>
   );

@@ -1,73 +1,8 @@
 import { ArrowLeft, Calendar, MapPin, Menu, X } from 'lucide-react';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
-import { format } from 'date-fns';
-import { ScheduleModel } from '@/models/schedule-model';
 import { useNavigate } from 'react-router-dom';
-
-export function ScheduleInformation() {
-  const [scheduleInformation, setScheduleInformation] = useState([]);
-
-  useEffect(() => {
-    fetch("https://api.stkpoolleague.com/v1/rdbms/db/schedule?sort=match_date", {
-      mode: "cors",
-      headers: {
-        "Accept": "application/json"
-      }
-    })
-      .then(resp => resp.json())
-      .then((data: []) => setScheduleInformation(data))
-    }, []
-  );
-
-  const weeklyScheduleMap = scheduleInformation.reduce((schedule, element) => {
-    if (!schedule.has(element["week"])) {
-      schedule.set(element["week"], [element])
-    } else {
-      schedule.get(element["week"])?.push(element)
-    }
-    return schedule;
-  }, new Map<number, ScheduleModel[]>())
-
-  return (
-    <div className="grid md:grid-cols-2 gap-6 p-6">
-      {
-        Array.from(weeklyScheduleMap.keys()).map(week => {
-          return (
-            <Card className="bg-gray-800 border-gray-700">
-              <CardHeader>
-                <CardTitle className="text-2xl text-red-500">Week {week}</CardTitle>
-              </CardHeader>
-
-              <div className="grid md:grid-cols-2 gap-6">
-                {weeklyScheduleMap.get(week)?.map((match: ScheduleModel) => {
-                  return (
-                    <CardContent className="text-gray-300 space-y-4">
-                      <div className="flex items-center space-x-3">
-                        <MapPin className="w-5 h-5 text-red-500" />
-                        <span>{match.location}</span>
-                      </div>
-                      <div className="flex items-center space-x-3">
-                        <Calendar className="w-5 h-5 text-red-500" />
-                        <span>
-                          {format(new Date(match.match_date), "EEEE, MMMM d")}
-                        </span>
-                      </div>
-                      <p className="text-sm">
-                        {match.away} @ {match.home}
-                      </p>
-                    </CardContent>
-                  )
-                })}
-              </div>
-            </Card>
-          )
-        })
-      }
-    </div>
-  )
-}
 
 export function Schedule() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -160,7 +95,160 @@ export function Schedule() {
         </Button>
       </div>
 
-      <ScheduleInformation />
+      <div className="grid md:grid-cols-2 gap-6 p-6">
+        <Card className="bg-gray-800 border-gray-700">
+          <CardHeader>
+            <CardTitle className="text-2xl text-red-500">Week 1</CardTitle>
+          </CardHeader>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            <CardContent className="text-gray-300 space-y-4">
+              <div className="flex items-center space-x-3">
+                <MapPin className="w-5 h-5 text-red-500" />
+                <span>Amsterdam</span>
+              </div>
+              <div className="flex items-center space-x-3">
+                <Calendar className="w-5 h-5 text-red-500" />
+                <span>
+                  Monday, October 13 
+                </span>
+              </div>
+              <p className="text-sm">
+                Josie Wood's @ Amsterdam
+              </p>
+            </CardContent>
+            <CardContent className="text-gray-300 space-y-4">
+              <div className="flex items-center space-x-3">
+                <MapPin className="w-5 h-5 text-red-500" />
+                <span>Sugar Mouse</span>
+              </div>
+              <div className="flex items-center space-x-3">
+                <Calendar className="w-5 h-5 text-red-500" />
+                <span>
+                  Thursday, October 16
+                </span>
+              </div>
+              <p className="text-sm">
+                Barfly @ Sugar Mouse
+              </p>
+            </CardContent>
+          </div>
+        </Card>
+        <Card className="bg-gray-800 border-gray-700">
+          <CardHeader>
+            <CardTitle className="text-2xl text-red-500">Week 2</CardTitle>
+          </CardHeader>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            <CardContent className="text-gray-300 space-y-4">
+              <div className="flex items-center space-x-3">
+                <MapPin className="w-5 h-5 text-red-500" />
+                <span>Amsterdam</span>
+              </div>
+              <div className="flex items-center space-x-3">
+                <Calendar className="w-5 h-5 text-red-500" />
+                <span>
+                  Monday, October 20
+                </span>
+              </div>
+              <p className="text-sm">
+                Sugar Mouse @ Amsterdam
+              </p>
+            </CardContent>
+            <CardContent className="text-gray-300 space-y-4">
+              <div className="flex items-center space-x-3">
+                <MapPin className="w-5 h-5 text-red-500" />
+                <span>Josie Wood's</span>
+              </div>
+              <div className="flex items-center space-x-3">
+                <Calendar className="w-5 h-5 text-red-500" />
+                <span>
+                  Wednesday, October 22
+                </span>
+              </div>
+              <p className="text-sm">
+                Barfly @ Josie Wood's
+              </p>
+            </CardContent>
+          </div>
+        </Card>
+        <Card className="bg-gray-800 border-gray-700">
+          <CardHeader>
+            <CardTitle className="text-2xl text-red-500">Week 3</CardTitle>
+          </CardHeader>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            <CardContent className="text-gray-300 space-y-4">
+              <div className="flex items-center space-x-3">
+                <MapPin className="w-5 h-5 text-red-500" />
+                <span>Barfly</span>
+              </div>
+              <div className="flex items-center space-x-3">
+                <Calendar className="w-5 h-5 text-red-500" />
+                <span>
+                  Sunday, October 26
+                </span>
+              </div>
+              <p className="text-sm">
+                Amsterdam @ Barfly
+              </p>
+            </CardContent>
+            <CardContent className="text-gray-300 space-y-4">
+              <div className="flex items-center space-x-3">
+                <MapPin className="w-5 h-5 text-red-500" />
+                <span>Sugar Mouse</span>
+              </div>
+              <div className="flex items-center space-x-3">
+                <Calendar className="w-5 h-5 text-red-500" />
+                <span>
+                  Thursday, October 30
+                </span>
+              </div>
+              <p className="text-sm">
+                Josie Wood's @ Sugar Mouse
+              </p>
+            </CardContent>
+          </div>
+        </Card>
+        <Card className="bg-gray-800 border-gray-700">
+          <CardHeader>
+            <CardTitle className="text-2xl text-red-500">Week 4</CardTitle>
+          </CardHeader>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            <CardContent className="text-gray-300 space-y-4">
+              <div className="flex items-center space-x-3">
+                <MapPin className="w-5 h-5 text-red-500" />
+                <span>Barfly</span>
+              </div>
+              <div className="flex items-center space-x-3">
+                <Calendar className="w-5 h-5 text-red-500" />
+                <span>
+                  Sunday, November 2
+                </span>
+              </div>
+              <p className="text-sm">
+                Sugar Mouse @ Barfly
+              </p>
+            </CardContent>
+            <CardContent className="text-gray-300 space-y-4">
+              <div className="flex items-center space-x-3">
+                <MapPin className="w-5 h-5 text-red-500" />
+                <span>Josie Wood's</span>
+              </div>
+              <div className="flex items-center space-x-3">
+                <Calendar className="w-5 h-5 text-red-500" />
+                <span>
+                  Wednesday, November 5
+                </span>
+              </div>
+              <p className="text-sm">
+                Amsterdam @ Josie Wood's
+              </p>
+            </CardContent>
+          </div>
+        </Card>
+      </div>
     </div>
   );
 }

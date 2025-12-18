@@ -1,72 +1,8 @@
 import { ArrowLeft, MapPin, Clock, Menu, X } from 'lucide-react';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { LocationModel } from '@/models/location-model';
 import { useNavigate } from 'react-router-dom';
-
-export function LocationInfo() {
-  const [locations, setLocations] = useState([]);
-
-  useEffect(() => {
-    fetch("https://api.stkpoolleague.com/v1/rdbms/db/locations", {
-      mode: "cors",
-      headers: {
-        "Accept": "application/json"
-      }
-    })
-      .then(resp => resp.json())
-      .then((data: []) => setLocations(data))
-    }, []
-  );
-
-  return (
-    <div className="grid md:grid-cols-2 gap-8 mb-12">
-    {
-      locations.map((location: LocationModel) => {
-        return (
-          <Card className="bg-gray-800 border-gray-700">
-            <CardHeader>
-              <CardTitle className="text-2xl text-red-500 flex items-center">
-                <MapPin className="w-6 h-6 mr-3" />
-                {location.long_name}
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="text-gray-300 space-y-4">
-              <div className="space-y-2">
-                <div className="flex items-start space-x-3">
-                  <MapPin className="w-5 h-5 text-red-500 mt-0.5" />
-                  <div>
-                    <p className="font-semibold text-white">{location.address_1}</p>
-                    <p>{location.address_2}</p>
-                  </div>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <Clock className="w-5 h-5 text-red-500" />
-                  <span>{location.match_day} at {location.match_time}</span>
-                </div>
-              </div>
-              {
-                location.epic_shots_host ?
-                (
-                  <div className="bg-red-600 text-white p-3 rounded-lg">
-                    <p className="font-semibold text-sm">🏆 Epic Shots Invitational Host Venue</p>
-                  </div>
-                )
-                : null
-              }
-              
-              <p className="text-sm">
-                {location.long_description}
-              </p>
-            </CardContent>
-          </Card>
-        )
-      })
-    }
-    </div>
-  )
-}
 
 export function Locations() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -170,7 +106,141 @@ export function Locations() {
           while maintaining the high standards of competition that define the STK Pool League.
         </p>
 
-        <LocationInfo />
+        <div className="grid md:grid-cols-2 gap-8 mb-12">
+          <Card className="bg-gray-800 border-gray-700">
+            <CardHeader>
+              <CardTitle className="text-2xl text-red-500 flex items-center">
+                <MapPin className="w-6 h-6 mr-3" />
+                Amsterdam Billiards
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="text-gray-300 space-y-4">
+              <div className="space-y-2">
+                <div className="flex items-start space-x-3">
+                  <MapPin className="w-5 h-5 text-red-500 mt-0.5" />
+                  <div>
+                    <p className="font-semibold text-white">110 E 10th St.</p>
+                    <p>New York, NY 10003</p>
+                  </div>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <Clock className="w-5 h-5 text-red-500" />
+                  <span>Mondays at 9pm</span>
+                </div>
+              </div>
+              <div className="bg-red-600 text-white p-3 rounded-lg">
+                <p className="font-semibold text-sm">🏆 Epic Shots Invitational Host Venue</p>
+              </div>
+              <p className="text-sm">
+                The flagship venue of NYC billiards. Amsterdam Billiards hosts our monthly Epic Shots Invitationals and serves as the championship battleground where teams compete for the biggest prizes.
+              </p>
+            </CardContent>
+          </Card>
+          <Card className="bg-gray-800 border-gray-700">
+            <CardHeader>
+              <CardTitle className="text-2xl text-red-500 flex items-center">
+                <MapPin className="w-6 h-6 mr-3" />
+                Peck Slip Social
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="text-gray-300 space-y-4">
+              <div className="space-y-2">
+                <div className="flex items-start space-x-3">
+                  <MapPin className="w-5 h-5 text-red-500 mt-0.5" />
+                  <div>
+                    <p className="font-semibold text-white">36 Peck Slip</p>
+                    <p>New York, NY 10038</p>
+                  </div>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <Clock className="w-5 h-5 text-red-500" />
+                  <span>Tuesdays at 9pm</span>
+                </div>
+              </div>
+              <p className="text-sm">
+                Located in the heart of the Financial District, Peck Slip Social combines competitive pool with a vibrant social atmosphere. Great food, craft cocktails, and quality tables make this a favorite among league players.
+              </p>
+            </CardContent>
+          </Card>
+          <Card className="bg-gray-800 border-gray-700">
+            <CardHeader>
+              <CardTitle className="text-2xl text-red-500 flex items-center">
+                <MapPin className="w-6 h-6 mr-3" />
+                Josie Wood's Pub
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="text-gray-300 space-y-4">
+              <div className="space-y-2">
+                <div className="flex items-start space-x-3">
+                  <MapPin className="w-5 h-5 text-red-500 mt-0.5" />
+                  <div>
+                    <p className="font-semibold text-white">11 Waverly Pl.</p>
+                    <p>New York, NY 10003</p>
+                  </div>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <Clock className="w-5 h-5 text-red-500" />
+                  <span>Wednesdays at 9pm</span>
+                </div>
+              </div>
+              <p className="text-sm">
+                A classic Greenwich Village pub with authentic character and a welcoming neighborhood feel. Josie Woods offers the perfect mid-week escape with competitive pool in a relaxed, traditional pub setting.
+              </p>
+            </CardContent>
+          </Card>
+          <Card className="bg-gray-800 border-gray-700">
+            <CardHeader>
+              <CardTitle className="text-2xl text-red-500 flex items-center">
+                <MapPin className="w-6 h-6 mr-3" />
+                Sugar Mouse
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="text-gray-300 space-y-4">
+              <div className="space-y-2">
+                <div className="flex items-start space-x-3">
+                  <MapPin className="w-5 h-5 text-red-500 mt-0.5" />
+                  <div>
+                    <p className="font-semibold text-white">47 3rd Ave.</p>
+                    <p>New York, NY 10003</p>
+                  </div>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <Clock className="w-5 h-5 text-red-500" />
+                  <span>Thursdays at 9pm</span>
+                </div>
+              </div>
+              <p className="text-sm">
+                An intimate East Village venue with a cozy, underground vibe. Sugar Mouse provides the perfect setting to end your week with serious competition and great company in a uniquely NYC atmosphere.
+              </p>
+            </CardContent>
+          </Card>
+          <Card className="bg-gray-800 border-gray-700">
+            <CardHeader>
+              <CardTitle className="text-2xl text-red-500 flex items-center">
+                <MapPin className="w-6 h-6 mr-3" />
+                Barfly
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="text-gray-300 space-y-4">
+              <div className="space-y-2">
+                <div className="flex items-start space-x-3">
+                  <MapPin className="w-5 h-5 text-red-500 mt-0.5" />
+                  <div>
+                    <p className="font-semibold text-white">244 3rd Avenue</p>
+                    <p>New York, NY 10010</p>
+                  </div>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <Clock className="w-5 h-5 text-red-500" />
+                  <span>Sundays at 9pm</span>
+                </div>
+              </div>
+              <p className="text-sm">
+                Barfly is that perfect New York ix of grit and charm—the kind of spot where the drinks are strong, the bartenders actually care, and the pool table in the back is always calling your name. It's got that no-nonsense, after-work energy where games get competitive fast, strangers become teammates, and the crowd's just rowdy enough to keep it fun. STK nights here hit different—it's where the neighborhood meets the hustle, cue in hand, and nothing but bragging rights on the line.
+              </p>
+            </CardContent>
+          </Card>
+        </div>
       </div>
     </div>
   );
